@@ -1,0 +1,163 @@
+/* make responsive:
+mobile: posts 100%
+min-width 768px: 2x float-left 50%
+min-width 1200px: 3x float-left 33.33%
+*/
+
+/* GLOBAL STYLES */
+
+body {
+  background-color: #eee;
+  color: #222222;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100%;
+  }  
+
+.header, .nav, .main-sec, .footer {
+  width: 96%;
+  padding: 1%;
+  margin: 1%;
+  }
+
+.header, .footer {
+  background: #2cb2de;
+  }
+
+a {
+  color: #2cb2de;
+  text-decoration: none;
+  font-weight: 900;
+  }
+
+h1 {
+  font-size: 3em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  }
+  
+h2 {
+  color: #2cb2de;
+  font-size:2em;
+  text-align: center;
+  text-transform: uppercase;
+  }
+  
+h3 {
+  font-size: 1.7em;
+  }
+  
+h4 {
+  font-size: 1.1em;
+  }
+
+/* SECTIONS */
+
+/* header */
+
+.header h1 {
+  color: #fff;
+  text-align: center;
+  }
+
+/* top-navigation */
+
+.top-nav {
+  width: 90%;
+  }
+
+.top-nav ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  }
+
+  .top-nav li {
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    }
+    
+  .top-nav a, .top-nav strong {
+    background: #fff;
+    color: black;
+    border: 3px solid #2cb2de;
+    font-weight: 500;
+    padding: 2%;
+    text-decoration: none;
+    }
+    
+  .top-nav a:hover {
+    background: #2cb2de;
+    }
+
+/* inside-navigation */
+
+
+
+/* main-section */
+
+.post-container {
+  width: 100%;
+  }
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  width: 100%;
+  }
+  
+.post {
+  background: #fff;
+  padding: 1%;
+  width: 30%;
+  }
+  
+/* HTML + CSS tags */
+
+.css {
+  color: #ff0066;
+  font-weight: 500;
+  }
+
+.html {
+  color: #47d916;
+  font-weight: 500;
+  }
+  
+.mark {
+  color: #4941f0;
+  font-weight: 700;
+  }
+
+/* MEDIA QUERY for tablets 
+
+@media (min-width: 768px) {
+  .main-sec {
+  width: 100%;
+  }
+  
+  .post {
+  float: left;
+  width: 40%;
+  }
+}
+
+MEDIA QUERY for desktops
+
+@media (min-width: 1200px) {
+  .main-sec {
+  width: 100%;
+  }
+
+  .post {
+  float: left;
+  padding: 1%;
+  width: 30%;
+  }
+}
+
+*/

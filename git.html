@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Job letter</title>
+</head>
+
+<body>
+<!-- header farblich absetzen -->
+	<header>
+		<h1>Job letter</h1>
+	</header>
+	
+<!-- main site navigation goes on top -->
+	<nav>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="web.html">Grundwissen übers Web</a></li>
+			<li><a href="html.html">HTML</a></li>
+			<li><a href="css.html">CSS</a></li>
+			<li><a href="usability.html">Usability</a></li>
+			<li>Job letters</li>
+			<li><a href="linux.html">Ideen</a></li>
+		</ul>
+	</nav>
+
+	<header>
+		<h1>Jobletter abonnieren</h1>
+<!-- inside navigation starts here -->
+	<main>
+	
+	<form>
+		<p>Felder mit * sind Pflichtfelder</p>
+
+	        <p>*Vorname<br>
+ 			<input required type="text" id="absender_vorname" placeholder="Ihr Vorname">
+		</p>
+
+		<p>*Nachname<br>
+			<input required type="text" id="absender_nachname" placeholder="Ihr Nachname">
+		</p>
+
+		<p>*E-Mail-Adresse<br>
+			<input required type="email" id="absender_email" placeholder="Ihre E-Mail-Adresse">       
+		</p>
+
+		<p>Geburtsdatum</br>
+			<input type="number" min="1900" max="2017" name="absender_geburtsjahr">
+		</p>
+		
+		<p>Nachricht an uns</br>
+			<textarea name="absender_nachricht" cols="40" rows="10" placeholder="Schreiben Sie uns Ihre 				Fragen. Wir melden uns bald per E-Mail bei Ihnen"></textarea>
+		</p>
+		<button type="submit">Absenden</button>
+	
+	</form>
+
+	</main>
+</body>
+
+</html>
+
+
+

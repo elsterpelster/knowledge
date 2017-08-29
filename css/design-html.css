@@ -1,0 +1,130 @@
+body {
+	background: #e1e2e3;
+	font-family: sans-serif;
+	width: 1200px;
+	}
+
+.header {
+	font-size: 10em;
+	font-weight: bold;
+	color: white;
+	background: #ff0066;
+	text-align: center;
+	}
+
+article {
+	border: 1px solid black;
+	}
+
+/* main navigation */
+.top-nav {
+	list-style-type: none;
+	}
+
+.top-nav li {
+	color: black;
+	border: 0.5px solid #4c4c51;
+	margin: 5px;
+	padding: 20px;
+	display: inline-block;
+	width: 100px;	
+	}
+
+
+/* inside-navigations */
+
+.inside-nav {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	}
+
+.inside-nav li {
+	display: block;
+	width: 300px;
+	background: pink;
+	margin: 5px;
+	padding: 5px;
+	}
+
+/* Sections */
+
+main {
+	overflow: auto;
+	}
+
+.insidenav {
+	float: left;
+	}
+
+.post {
+	background: #fff;
+	float: left;
+	padding: 1%;
+	margin: 1%;
+	width: 29%;
+	}
+
+footer {
+        background: #fff;
+        clear: both;
+        padding: 1%;
+	width: 98%;
+	}
+
+
+/* Classes */
+
+	/* css property examples */
+	
+	.arial {font-family: arial;}
+	.times {font-family: times;}
+	.georgia {font-family: georgia;}
+	.tahoma {font-family: tahoma;}
+	.serif {font-family: serif;}
+	.sans-serif {font-family: sans-serif;}
+	.bold {font-weight: bold;}	
+	.bolder {font-weight: bolder;}
+	.normal {font-weight: normal;}
+	.lighter {font-weight: lighter;}
+	.hundred {font-weight: 100;}
+	.ninehundred {font-weight: 900;}
+	.italic {font-style: italic;}
+	.small-caps {font-variant: small-caps;}
+	.capitalize {text-transform: capitalize;}
+	.uppercase {text-transform: uppercase;}
+	.lowercase {text-transform: lowercase;}
+	.overline {text-decoration: overline;}
+	.line-through {text-decoration: line-through;}
+	.underline {text-decoration: underline;}
+	.line-height {line-height: 2em;}
+	.word-spacing {word-spacing: 2em;}
+	.letter-spacing {letter-spacing: 2em;}
+	.word-spacing-negative {word-spacing: -0.5em;}
+	.letter-spacing-negative {letter-spacing: -1.5px;}
+
+/* list */
+
+.no-bullets {
+	list-style-type: none;
+	}
+	
+/* HTML + CSS tags */
+
+.html {
+	color: #00cc99;
+	}
+
+.css {
+	color: #ff3399;
+	}
+
+.mark {
+	color: #990099;
+	font-weight: bold;
+	}
+
+.list {
+	list-style-type: none;
+	padding: 20px;
+	}

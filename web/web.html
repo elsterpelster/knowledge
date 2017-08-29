@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Get started in internet stuff</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  
+<!-- header farblich absetzen -->
+  <header>
+    <h1>Lexikon Web development</h1>
+  </header>
+
+<!-- main site navigation goes on top -->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Want to learn more about HTML, CSS, Javascript and Linux?</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>        
+        <li><a href="../index.html">Home</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">HTML and CSS<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="../html.html">Html</a></li>
+            <li><a href="../css.html">CSS</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="../responsive.html">Responsive</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+	
+
+<main>
+
+<!-- content starting -->
+
+<div class="container">
+
+<!-- dividing text into columns -->
+  <div class="row">
+
+<!-- first column: lexikon -->
+
+    <div class="col-md-8">  
+
+      <div class="post" id="backend">
+        <h2>Backend</h2>
+          <p>The backend comprises web server, application, and database.</p>
+            <ul>
+              <li>Web server delivers request to application</li>
+              <li>Application sends query to database, puts together data in web page, sends web page through web server to browser.</li>
+            </ul>
+      </div>
+  
+      <div class="post" id="cms">
+  
+        <h2>CMS</h2>
+          <p>Jemand erstellt das Design für die Website für mich, ich kann die Website ohne HTML/CSS-Kenntnisse warten</p>
+            <ul>
+              <li>Mit F12: Quelltext ansehen, manchmal steht darin, mit welchem CMS gearbeitet wurde</li>
+            </ul>
+
+          <p>CMS besteht aus</p>
+            <ul>
+              <li>Template (oder „Theme“ in WordPress), d.h. einer Art Designvorlage</li>
+              <li>Konfiguration</li>
+	    </ul>
+	
+          <p>Beispiele</p>
+              <ul>
+                <li>Typo3: Redaktionssoftware</li>
+                <li>Joomla</li>
+              </ul>
+      </div>
+      
+      <div class="post" id="command">
+        <h2>Command line / terminal</h2>
+        
+              <ul>
+                <li>Konsole, Kommandozeile / command prompt, command line, CLI</li>
+                <li>Nutzerendgerät für Eingaben und Anzeigen von Daten, Interface für Steuerung einer Software</li>
+                <li>First computers controlled via punch cards - punching programs into series of cards that were fed into computer via terminal. Replaced by video terminals in 1960s. Small screens in which a series of commands could be typed via keyboard.</li>
+                <li>In 1970s, giant mainframe computers were reduced down to microcomputers, became then smaller and more affordable. But still needed to be controlled via terminal</li>
+                <li>First GUI 1983 on Apple Lisa, successful since 1984 in Macintosh computer. First time using desktop metaphor, possible to interact with computer without using commands</li>
+                <li>Command line speaks directly to computer by Unix commands. Easier and faster than GUI, especially when working with many programs</li>
+              </ul>
+      
+      </div>
+      
+      <div class="post" id="compiler">
+        <h2>Compiler/interpreter</h2>
+          <p>translates programming language in binary code</p>
+      </div>
+      
+      <div class="post" id="database">	
+        <h2>Database</h2>
+          <p>Place where all the data is stored</p>
+            <ul>
+              <li>MySQL popular database</li>
+              <li>SQL: Programming language to get data in and out of database.</li>
+              <li>SQL sends query to database to get out every user over age of 25</li>
+            </ul>
+      </div>
+
+      <div class="post" id="framework">
+        <h2>Frameworks</h2>
+          <p>Collection of libraries used to accomplish common tasks in web applications.</p>
+          <p>All web apps need web servers, databases, application code, and some kind of user interface.</p>
+      </div>
+  
+      <div class="post" id="frontend">
+        <h2>Frontend</h2>
+          <p>Computer shows interactive, dynamic, or static web site / application /.. </p>
+      </div>
+      
+      <div class="post" id="git">
+        <h2>Git, Github and the command line</h2>
+        
+          <h3>Definitions</h3>        
+            <p><strong>Git</strong> is most popular version control system.</p>
+              <ul>
+                <li><strong>Version control</strong>: software that tracks any changes that I make to my code files</li>
+                <li>Ensures I have backup of my code and saves copies of code at various stages</li>
+                <li>Makes it possible to work with other developers on same codebase at the same time without interfering with each other</li>
+              </ul>
+            <p><strong>GitHub</strong> is a SAS (software as a service), which allows me to host code in the cloud (on server of GitHub)</p>
+              <ul>
+                <li>Accessible from everywhere, possible to share with others</li>
+                <li>Other services for hosted Git repositories: Bitbucket, Beanstalk, RhodeCode ... and I can also set up my own Git server</li>
+              </ul>
+
+           <h3>How it works</h3>
+             <ul>
+               <li>If I work on website, I have folder with some files on my computer. Using the terminal, I can turn folder into repository in Git (local repository on my computer)</li>
+               <li>Create matching repository on GitHub to create backup of my files (remote repository)</li>
+               <li>Sync local with remote repository with "git pull"</li>
+               <li>Edit files in local repository, commit (save) changes to local repository with "git add" and "git commit"</li>
+               <li>Sync local to remote repository again</li>
+               <li>Push changes to remote repository with "git push"</li>
+             </ul>
+
+        </div>
+
+      <div class="post" id="linux">
+        <h2>Linux</h2>
+        
+            <p><strong>OS</strong>: Software, die Verwendung des Computers ermöglicht.</p>
+              <ul>
+                <li>Besteht aus Kernel und zugehöriger Software, die in Form von Distributionen vertrieben wird</li>
+              </ul>
+            
+            <p><strong>Kernel</strong>: basic services for all other parts of OS.</p>
+              <ul>
+                <li>Interface zwischen Shell und Hardware, ermöglicht Nutzung der Hardware</li>
+                <li>Linux-Kernel kann an sich nichts darstellen, dafür X-Window-System</li>
+              </ul>
+            
+            <p><strong>Shell</strong>: outermost part of OS that interacts with user commands</p>
+              <ul>
+                <li>Interpreting command line for Kernel</li>
+                <li>BASH: Bourne again Shell</li>
+              </ul>
+                        
+            <p><strong>X-Window-System/X</strong>: Protokoll, das von Software umgesetzt wird</p>
+              <ul>
+                <li>Basic framework for GUI</li>
+                <li>Server/XServer: wird configueriert, connected Hardware</li>
+              </ul>
+      </div>
+      
+      <div class="post" id="app">
+        <h2>Web application</h2>
+          <p>Unlike websites, web apps are</p>
+            <ul>
+	      <li>interactive: gather / present data</li>
+              <li>dynamic: use databases (need to be updated)</li>
+            </ul>
+          <p>Web applications require</p>
+            <ul>
+	      <li>web servers</li>
+              <li>databases</li>
+              <li>application code</li>
+              <li>user interface</li>
+            </ul>
+      
+          <p>For example, many web apps comprised of PHP with MySQL database running on Apache server on Linux computer</p>
+      </div>
+      
+      <div class="post" id="browser">  
+        <h2>Web browser</h2>
+          <p>Software to read HTML files via HTTP</p>
+      </div>
+  
+      <div class="post" id="server">
+        <h2>Web server</h2>
+          <p>Computer to give out websites, as well as software that responds to web requests.</p>
+            <ul>
+              <li>Web server software on Windows: Internet Information Services (IIS)</li>
+              </li>Web server software on Apple and Linux: Apache</li>
+            </ul>
+      </div>
+
+      <div class="post" id="xml">
+        <h2>XML und HTML</h2>
+          <p>Evolution HTML: HTML 3.0, 4.0, danach XHTML, jetzt HTML 5.0</p>	
+          <ul>
+            <li>XML als übergeordnete Sprache/Syntax.</li>
+            <li>XML: textbasiertes Format für den Austausch von strukturierten Informationen (z.B. Texte, Rechnungen, Bücher)</li>
+            <li>XML soll Informationen fürs Internet anwendbar machen und menschenlesbar sein</li>
+            <li>HTML ist vom gleichen Standard (SGML) abgeleitet, ist aber eigentlich formal unabhängig von XML.</li>
+            <li>HTML 4.01 wurde für XML übersetzt, daraus ist neuer Standard XHTML hervorgegangen als gemeinsame Schnittmenge</li>
+            <li>Dieser Dualismus zwischen HTML und XML wurde jetzt beendet mit HTML5</li>
+          </ul>
+      </div>
+  
+      <div class="post" id="bootstrap">
+  
+        <h2>Bootstrap</h2>
+          <h3>What is bootstrap?</h3>
+            <p>Bootstrap is most popular front-end framework (component library), open-source toolkit for developing with HTML, CSS and JS.</p>
+
+            <ul>
+              <li>Created in 2011 as Twitter bootstrap</li>
+              <li>Spotify and other big sites built with bootstrap</li>
+              <li>Toolbox which gives you code/classes that make it easy to create things like navigation bars, buttons, sidebar, pagination - and so saves a lot of time for things for which there is no need to start from scratch</li>
+              <li>Good for prototyping/building sth quickly - out of the box results look already pretty decent, can then be customized</li>
+              <li>Developer-friendly, if you are not so much into designing, there are all kinds of pre-built features.</li>
+              <li>Responsive, mobile first.</li>
+            </ul>
+
+          <h3>Why use bootstrap?</h3>
+            <ul>
+              <li>Very popular, widely supported, lots of online resources</li>
+              <li>You can use and adapt the code you get</li>
+              <li>Relatively easy to learn. There are other front-end frameworks, but transitioning is relatively easy, as they all work in a similar way</li>
+              <li>Compatible with all browsers</li>
+              <li>Compatible with other preprocessers like Sass and Less</li>
+                <ul>
+                  <li>Sass: Meta-Sprache von CSS. Hilft dabei, Stylesheets schneller zu schreiben und Techniken unkompliziert (und browserübergreifend) einzusätzen. Sass automatisiert bestimmte Aufgaben und vereinfacht Umgang mit Farben und Gestaltungsrastern</li>
+                  <li>Regeln werden in .scss Dateien (statt in .css-Dateien) geschrieben, aus denen dann normale .css-Dateien generiert werden.</li>
+                </ul>
+              <li>Bootstrap has wide range of themes and templates, can be integrated in other languages, also for building mobile app.</li>
+            </ul>
+
+          <h3>What can be problematic about bootstrap?</h3>
+            <ul>
+             <li>Bootstrap has lots of code, so would be rather overloaded for simple sites.</li>
+             <li>Uses also lots of classes</li>
+             <li>Many sites use it, and if it is not customized enough, sites look similar (and if too much customization, then sometimes easier to start from scratch)</li>
+            </ul>
+
+          <h3>Get started with bootstrap</h3>
+            <ul>
+              <li>Get bootstrap from getbootstrap.com.</li>
+              <li>Bootstrap CDN: Also possible to not download, and instead load from external site, but this option will take longer to load. (CDN: content distribution network, large distributed system of servers deployed in multiple data centers across the internet)</li>
+              <li>Bootstrap contains css files and js files, so I need to create my own HTML document: index.html-file in the same folder.</li>
+              <li>On bootstrap website, under <a href="https://getbootstrap.com/docs/3.3/getting-started/#template" target="_blank">Getting started</a> copy basic HTML template into index.html file, very useful for getting started. Ensures to load bootstrap files (css files, jQuery (necessary for bootstrap javascript plugins), and javascript files)</li>
+              <li>Useful to create container-div around my content for adding margin and paddings</li>
+            </ul>
+
+          <h3>Key compontents</h3>
+            <h4>Bootstrap grid system</h4>
+              <p>Grid system is broken down into 12 columns, which can be allocated freely in 3x col-md-4, 2x col-md-6, col-md-4 + col-md-8, ... If I want to start a grid, I need to wrap columns in <span class="html">&lt;div class="row"&gt;</span>...<span class="html">&lt;div&gt;</span>. Col-class relies on row-class as parent.</p>
+              </ul>
+              
+              <blockquote>
+                <span class="html">&lt;div class="row"&gt;<br>
+                &lt;div class="col-md-6"&gt;</span>Column one, half width<span class="html">&lt;/div&gt;<br>
+                &lt;div class="col-md-6"&gt;</span>Column two, also half width<span class="html">&lt;/div&gt;<br>
+                &lt;/div&gt;
+              </blockquote>
+                    
+              <p>Grid system has 4 classes</p>
+                <ul>
+                  <li>xs for phones, sm for tablets, md for desktops, and lg for larger desktops. Classes can be combined to create more dynamic layouts</li>
+                  <li>Classes scale up, so if I want set same widths for xs and sm, I need to specify only xs.</li>
+                  <li>Default settings for xs: never stacking, all others only at certain breakpoints</li>
+                </ul>
+        
+            <h4>Images</h4>
+              <p>Adding classes to img to say how they should be displayed<p>
+               <ul>
+                <li><span class="html">&lt;img src="..." alt="..." class="img-circle"&gt;</span> - display round picture.</li>
+                <li>Class="img-rounded", image gets rounded edges</li>
+                <li>Class="img-responsive" to make image responsive, that is to make it fit into its container (saves you the time to do that yourself)</li>
+              </ul>
+        
+            <h4>Navigation bar</h4>
+              <p>On getbootstrap.com, copy <a href="https://getbootstrap.com/docs/3.3/components/#navbar" target="_blank">default code for navigation</a>. All custom styles responsive</p>
+          
+            <h4>Buttons</h4>
+              <ul>
+                <li>Button classes to change colors, sizes etc. <a href="https://getbootstrap.com/docs/3.3/components/#btn-groups" target="_blank">Buttons on getbootstrap.com</a></li>
+                <li>Colors: btn-default - white button, btn-primary - blue, btn-success - green, ... </li>
+              </ul>
+
+          <h3>Suffixes and features</h3>
+            <ul>
+              <li>Suffixes for buttons appear for other things like panels, progress bars, labels etc.</li>
+              <li>Same features to make things smaller and bigger etc.</li>
+            </ul>
+      
+         <h3>Customization</h3>
+            <ul>
+              <li>Especially for starting out, good to copy templates and then adapt them und understand them</li>
+              <li>If I want to add my own styles, add custom.css file in css folder, and add this stylesheet in my HTML doc (not replace bootstrap css, just add it)</li>
+            </ul>        
+    
+      </div>
+      
+<!-- first column content over -->  
+    </div>
+
+<!-- second column: inside navigation -->    
+    <div class="col-md-4">
+      <h2>Overview</h2>
+        <ul>
+          <li><a href="#backend">Backend</a></li>
+          <li><a href="#cms">CMS</a></li>
+          <li><a href="#command">Command line</a></li>
+          <li><a href="#compiler">Compiler / interpreter</a></li>
+          <li><a href="#database">Database</a></li>
+          <li><a href="#framework">Frameworks</a></li>
+          <li><a href="#frontend">Frontend</a></li>
+          <li><a href="#git">Git and Github</a></li>
+          <li><a href="#linux">Linux</a></li>
+          <li><a href="#app">Web application</a></li>
+          <li><a href="#browser">Web browser</a></li>
+          <li><a href="#xml">XML und HTML</a></li>
+          <li><a href="#bootstrap">Bootstrap</a></li>
+        </ul>
+        
+<!-- second column content over -->
+    </div>
+
+<!-- closing columns -->
+  </div>
+
+
+</main>
+	
+</body>
+</html>
+
+  <body>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+  </body>
+  
+</html>

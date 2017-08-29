@@ -1,0 +1,40 @@
+/* STRUCTURE */
+
+body {
+	}
+
+.header {
+	}
+
+.top-nav {
+	}
+
+.inside-nav {
+	}
+
+
+.posts {
+	}
+
+.aside {
+	}
+	
+/* HTML + CSS tags */
+
+.html {
+	color: #00cc99;
+	}
+
+.css {
+	color: #ff0066;
+	}
+
+.mark {
+	color: #990099;
+	font-weight: bold;
+	}
+
+.list {
+	list-style-type: none;
+	padding: 20px;
+	}

@@ -1,0 +1,81 @@
+/* GLOBAL STYLES */
+
+html, body {
+  background: #dce1e3;
+  font-family: sans-serif;
+  padding: 1%;
+  width: 98%;
+  }
+
+.linux {
+  color: #219ac2;
+  font-weight: 900;
+  }
+
+/* SECTIONS */
+
+/* header */
+
+header {
+  align-items: center;
+  justify-content: center;
+  background: #219ac2;
+  color: #fff;
+  display: flex;
+  width: 96%;
+  }
+
+header h1 {
+  width: 36%;
+  padding: 2%;
+  }
+  
+nav {
+  width: 56%;
+}
+  
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-row: row nowrap;
+  list-style-type: none;
+  }
+
+nav ul li {
+  display: flex;
+  justify-content: space-around;
+  }
+    
+nav ul li a, nav ul li strong {
+  color: #fff;
+  text-decoration: none;
+  }
+
+/* posts */
+
+.post {
+  background: #fff;
+  margin: 1%;
+  padding: 1%;
+  width: 96%;
+  }
+  
+.flex-container {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-row: row wrap;
+  justify-content: space-around;
+  }
+
+.flex-item {
+  display: flex;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  width: 30%;
+  }

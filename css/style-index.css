@@ -1,0 +1,135 @@
+/* DESKTOP VERSION */
+
+body {
+  font-family: 'Hind', sans-serif;
+}
+
+/* HEADER */
+
+.header {
+  font-size: 16px;
+  width: 100%;
+}
+
+.banner {
+  background: #00cc99;
+  color: #ffffff;
+  margin: 0;
+  padding: 1% 0;
+  text-align: center;
+  }
+
+.banner h1 {
+  font-size: 3em;
+  font-weight: 900;
+  }
+  
+.top-nav {
+  background: #00cc99;
+  float: left;
+  font-size: 1em;
+  margin: 2%;
+  width: 23%;
+}
+
+.top-nav ul {
+  display: block;
+  font-size: 1.3em;
+  list-style-type: none;
+  padding: 5%;
+  }
+  
+.top-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  width: 100%;
+  }
+  
+.top-nav a:hover, .top-nav a:focus, .top-nav a:active {
+  border: solid 0.5pt #4d4d4d;
+  }
+
+.top-nav a:visited {
+  font-style: italic;
+  }
+
+
+/* MAIN SEC */
+
+.main-sec {
+  font-size: 16px;
+  }
+
+.to-do-list {
+  padding: 0 0 0 27%;
+}
+
+.to-do-list h1 {
+  font-size: 1.5em;
+  margin: 2%;
+  }
+
+.to-do-list h2 {
+  font-size: 1.1em;
+  margin: 2% 0 0 2%;
+  }
+ 
+.to-do-list p {
+  font-size: 1.1em;
+  margin: 0 0 0 2%;
+  }
+
+.post {
+  float: left;
+  margin: 1%;
+  padding: 1%;
+  width: 15%;
+  }
+  
+.aside {
+  clear: both;
+  }
+	
+/* HTML + CSS tags */
+
+.html {
+	color: #00cc99;
+}
+
+.css {
+	color: #ff0066;
+}
+
+.mark {
+	color: #0000ff;
+	font-weight: bold;
+}
+
+/* MOBILE VERSION */
+
+@media screen and (max-width: 768px) {
+
+.top-nav {
+  float: none;
+  font-size: 1em;
+  margin: 2%;
+}
+
+.top-nav ul {
+  font-size: 1.3em;
+  list-style-type: none;
+  }
+  
+.top-nav li {
+  color: #00cc99;
+  }
+
+.to-do-list {
+  padding: 0;
+}
+
+.post {
+  width: 100%;
+  }
+  
+}

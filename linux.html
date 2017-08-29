@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style-linux.css">
+  <title>The beginner's guide to Linux</title>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<!-- header farblich absetzen -->
+  <h1>Linux and Ubuntu</h1>
+	
+<!-- main site navigation goes on top -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="web.html">Grundwissen übers Web</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><a href="usability.html">Usability</a></li>
+      <li><a href="jobletters.html">Job letters</a></li>
+      <li>Linux</li>
+    </ul>
+  </nav>
+  
+</header>
+
+<!-- main part -->
+
+<main>
+
+<!-- Terminal -->
+
+  <h2>Das Terminal und seine wichtigsten commands</h2>
+
+    <div class="flex-container">
+
+      <div class="post" class="flex-item">
+        <h3>Search, create, copy, delete things</h3>
+          <ul>
+            <li><span class="linux">dkpg -L "wine"</span>: Search application. It will list all applications with this name inside + their location</li>
+            <li><span class="linux">cp directory-x/file.html ~/Documents/directory-y/</span>: Copy file from directory-x to director-y</li>
+            <li><span class="linux">mkdir /.../mynewfolder</span>: create new directory</li>
+            <li><span class="linux">touch mynewfolder/index.html</span>: create new file</li>
+            <li><span class="linux">rm -i</span>: remove file</li>
+            <li><span class="linux">rmdir</span>: remove/delete empty directory</li>
+            <li><span class="linux">rm -r</span>: delete directory and files inside</li>
+          </ul>
+      </div>
+     
+      <div class="post" class="flex-item">
+        <h3>Navigate and switch directories</h3>
+          <ul>
+            <li><span class="linux">pwd</span>: print working directory: where am I?</li>
+            <li><span class="linux">cd</span>: home</li>
+            <li><span class="linux">cd ..</span>: one level up</li>
+            <li><span class="linux">cd Documents/skillcrush</span>: change directory to this folder</li>
+            <li><span class="linux">cd Doc + tabkey</span>: autofill</li>
+            <li><span class="linux">cd -</span>: go back to previous directory</li>
+            <li><span class="linux">ls</span>: list services in this directory</li>
+            <li><span class="linux">ls -d</span>: list with details</li>
+          </ul>
+      </div>
+
+      <div class="post" class="flex-item">
+        <h3>Launch and close applications</h3>
+          <ul>
+            <li><span class="linux">nautilus /.../</span> or <span class="linux">xdg-open . </span>: open current directory (current directory: .)</li>
+            <li><span class="linux">open html.html</span>: open with default program</li>
+            <li><span class="linux">gedit html.html</span>: open with gedit</li>
+            <li><span class="linux">gedit *.html</span>: open all html files in this directory with gedit</li>
+            <li><span class="linux">chromium-browser html.html</span>: open with browser</li>
+            <li><span class="linux">open html.html</span>: open with default program</li>
+            <li><span class="linux">gedit html.html</span>: open with gedit</li>
+            <li><span class="linux">gedit *.html</span>: open all html files in this directory with gedit</li>
+          </ul>
+      </div>
+    </div>
+    
+    <div class="flex-container">
+
+      <div class="post" class="flex-item">
+        <h3>Administer terminal/processes</h3>
+          <ul>
+            <li><span class="linux">Ctrl+c</span>: kill running process</li>
+            <li><span class="linux">Ctrl+z</span>: pause running process</li>
+            <li><span class="linux">jobs</span>: shows all background jobs on terminal</li>
+            <li><span class="linux">bg</span>: makes last paused jobs continue in background</li>
+          </ul>
+      </div>
+      
+      <div class="post" class="flex-item">
+        <h3>Interesting commands</h3>
+          <ul>
+            <li><span class="linux">date</span>: today's date</li>
+            <li><span class="linux">cal 2017</span>: returns calendar for that year</li>
+            <li><span class="linux">say</span>: prompts computer to read out loud</li>
+            <li><span class="linux">man cd</span>: gives explanation on command</li>
+            <li><span class="linux">ping skillcrush.com</span>: is website on?</li>
+            <li><span class="linux">whois skillcrush.com</span>: who owns website</li>
+          </ul>
+      </div>
+    
+    </div>
+
+<!-- Tastenkombinationen in Linux -->
+  <h2>Shortcuts in Linux and Chromium</h2>
+    
+    <div class="flex-container">
+    
+      <div class="post" class="flex-item">
+        <h3>Im Browser</h3>
+          <ul>
+            <li><span class="linux">Alt + left-arrow</span>: Zurück</li>
+          </ul>
+      </div>
+      
+      <div class="post" class="flex-item">
+        <h3>In Ubuntu</h3>
+          <ul>
+            <li><span class="linux">Ctrl + win + d</span>: show desktop</li>
+            <li><span class="linux">Ctrl + w</span>: launch terminal</li>
+            <li><span class="linux">Ctrl + g</span>: launch Chromium</li>
+          </ul>
+      </div>
+
+    </div>        
+
+<!-- Setup -->
+	<div class="post">
+		<h3>Rund Windows and Linux at the same time</h3>
+			<ol>
+				<li>Windows-Partition verkleinern</li>
+				<li>Ubuntu downloaden und ausführen</li>
+					<ul>
+						<li>Setup installiert Basisystem mit GUI und Arbeitsumgebung</li>
+						<li>Arbeitsumgebung: LibreOffice, Browser etc.</li>
+					</ul>
+				<li>Partitionen zuweisen: / , home, swap</li>
+					<ul>
+						<li>/ root formatiert für Distro (Ubuntu)</li>
+						<li>Wenn ich Distro wechsle, wird / neukonfiguriert</li>
+						<li>Home-Dateien bleiben unberührt, können neu eingehängt werden</li>
+						<li>SWAP: hilft bei Memory-Operationen, 2x RAM = 2x 4GB</li>
+					</ul>
+			</ol>
+	</div>
+	
+	</main>
+</body>
+
+</html>

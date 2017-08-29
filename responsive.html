@@ -1,0 +1,524 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/style-responsive.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <title>Responsive web development</title>
+</head>
+
+<body>
+<!------------------------------- header farblich absetzen -->
+
+  <div class="header">
+    <h1>Responsive web development</h1>
+  </div>
+	
+<!-------------------------------- main site navigation goes on top -------------------->
+
+  <div class="top-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="web.html">Internet basics</a></li>
+      <li><a href="html.html">HTML</a></li>
+      <li><a href="css.html">CSS</a></li>
+      <li><strong>Responsive web design</strong></li>
+      <li><a href="git.html">Git and the command line</a></li>
+      <li><a href="javascript.html">Javascript</a></li>
+      <li><a href="linux.html">Linux</a></li>
+    </ul>
+  </div>
+
+<!-- CONTAINER FOR MAIN CONTENT STARTS HERE-->
+<div class="main-sec">
+
+  <!-- inside navigation starts here -->
+  
+  <div class="inside-nav">
+    <ul>
+      <li><a href="#con1">What is responsive web design?</a></li>
+      <li><a href="#con2">Media queries</a></li>
+      <li><a href="#con3">Responsive typset, images, and iframes</a></li>
+      <li><a href="#con4">Boilerplates and style tiles</a></li>
+      <li><a href="#con5">The flex model</a></li>
+    </ul>
+  
+  <!-- posts start here -->
+
+  <!-- post-container1: what is responsive web design? -->
+  
+  <div class="post-container" id="con1">
+    <h2>What is responsive web design?</h2>
+
+  <div class="flex-container"> 
+    <div class="post">
+      <h3>Mobile first</h3>
+      <p>Mobile version of site often degradation, try and make everything fit on tiny screen - basically degrading a site without ruining everything. Better to design mobile version of a site first, and then going from there</p>
+      <p><strong>Reasons:</strong> mobile is exploding, mobile forces us to focus on most important features and clean design, mobile offers interesting interactions.</p>
+      <p>That means before starting, good to have an idea what phone experiences look like and what users need</p>
+      <p>Mobile first in HTML means: define default for tiny screens, and then add (at end of document) for @media (min-width: 768px) - for tablets and @media (min-width: 1200px) - for desktops</p>
+      <p>In HTML-doc, add in beginning &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;</p>
+    </div>
+      
+    <div class="post">
+      <h3>Types of layout</h3>
+        <p><span class="mark">Static:</span> Requires horizontal scrolling if window too small (and content can't be squeezed because width is defined). Answer for smaller screens: creating a separate site for lower resolutions</p>
+        <p><span class="mark">Adaptive:</span> Defined layouts for different resolutions - basically a series of static layouts. Within each layout, resizing the window does not change the layout. Use CSS feature called media query to load different style sheets for different browsers. Necessary to design very device-specific</p>
+        <p><span class="mark">Liquid/fluid:</span> Scaling width of design parts relative to the window. Width always expressed in percentages. Default setting for width in HTML is fluid. Can be problematic, because it squeezes big content on small devices</p>
+        <p><span class="mark">Responsive:</span> Defined layouts for different resolutions. Within each layout, design is liquid and resizes width relative to changing window size - so combining user-centered approach with good maintainance. Using percentage and max-width and media queries</p>
+    </div>
+          
+    <div class="post">
+      <h3>Basic things for responsive web design</h3>
+        <ul>
+          <li>For responsive design, use media queries</li>
+          <li>Use percentages for width. Percentage of child-element orientiert sich am Elternelement. Kinderelement, das eiche Größe hat wie Elternelement bekommt 100% (will be automatically adjusted), columns z.B. 50%, 33.33% oder 25% (wenn man überall columns haben will)</li>
+          <li>Ensure readability for all devices</li>
+          <li>Make images and iframes responsive</li>
+        </ul>
+    </div>
+
+  </div>
+
+  <p><a href="#">Zum Seitenanfang</a></p>
+  </div>
+
+  <!-- post-container2: Media queries -->
+
+  <div class="post-container" id="con2">
+    <h2>Media queries</h2>
+
+  <div class="flex-container"> 
+      
+    <div class="post">
+      <h3>Adapt to browser sizes</h3>
+        <p>Media queries can be used for all types of layout.</p>
+        <ul>
+          <li>Adaptive design - adapting to a specific set of devices or browser widths, for example three layouts for desktop, tablet, and phone - layout jumps at certain width. So layout is optimized for three specific widths</li>
+          <li>When user visits website, browser collects information about user: their device, browser width, device orientation, screen resolution. Media queries instruct browser to apply CSS to our website only when screen has reached a certain size. Tell browser which CSS to use at which browser width</li>
+        </ul>
+        
+      <blockquote>
+        <span class="css">@media (max-width:600px) {</span> - @media is catch-all term for addressing devices<br>
+        <span class="css">body {<br>
+        background: red; }<br>
+        }</span><br>
+        <br>
+        <span class="css">@media (max-width: 601px) {</span> - for resolutions 600px and lower.<br>
+        <span class="css">body {<br>
+        background: blue; }<br>
+        }</span><br>
+        <br>        
+        <span class="css">@media (max-width: 601px) {</span> - for resolutions 601px and higher. Don't use 600px twice, this will create bugs<br>
+          <span class="css">body {<br>
+          background: blue; }<br>
+          }</span><br>
+      </blockquote>
+    </div>
+      
+    <div class="post">
+      <h3>Modifiers and operators</h3>
+      
+        <h4>Modifiers for media queries</h4>
+          <ul>
+            <li>width</li>
+            <li>height, min-height, max-height</li>
+            <li>device-width</li>
+            <li>braille</li>
+            <li>handheld</li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries" target="_blank"> Check out more modifiers</a></li>
+          </ul>
+        
+      <h4>Operators</h4>
+        <ul>
+          <li>and: combining multiple media features together. <span class="css">@media (min-width: 700px) and (orientation: landscape)</span> - so only applies if display is in landscape and over 700px width. <span class="css">@media (min-width 601px) and (max-width: 700px) { ... }</span>: this means between 601 and 700px</li>
+          <li>comma-separated lists - "or": if any of the media queries returns true, styles or style sheets get applied, so in above example, would be for min-width of 700px or orientation landscape.</li>
+          <li>not</li>
+          <li>only...</li>
+        </ul>
+        
+      <h4>Change types of media, like print</h4>
+        <p>Think about what user needs in print, and what not</p>
+          <blockquote>
+            <span class="css">@media print {<br>
+            body {<br>
+            background:none;<br>
+            }<br>
+            <br>
+            img {<br>
+            display:none;<br>
+            }<br>
+            }</span>
+          </blockquote>
+    </div>
+    
+    <div class="post">
+      <h3>How to use media queries and breakpoints</h3>
+      
+      <h4>In CSS</h4>
+	<ul>
+	  <li>Media queries added at end of CSS stylesheet</li>
+          <li>Think about which code can be reused for which devices</li>
+        </ul>
+        
+      <h4>Breakpoints</h4>
+        <p>A breakpoint is a modifier on a media query that tell browser which CSS to use for different devices and widths</p>
+        <p>How many breakpoints do we need?</p>
+          <ul>
+            <li>Landscape of devices constantly changing. Goal not to create 12 different versions to cover as many devices as possible. Responsive website tries to be balanced - so adding breakpoints for truly different user experiences.</li>
+            <li>Choose according to content - when does it look weird, when does text become hard to read?</li>
+            <li>With mobile-first approach, we should have 2 breakpoints: one for tablet (standard breakpoint 768px) and one for desktop (940px)</li>
+          </ul>
+
+    </div>
+    
+  </div>
+
+  <p><a href="#">Zum Seitenanfang</a></p>
+  </div>
+
+  <!-- post-container3: Make typeset, images, iframes responsive -->
+
+  <div class="post-container" id="con3">
+    <h2>Make typset, images, and iframes responsive</h2>
+
+  <div class="flex-container"> 
+
+    <div class="post">
+      <h3>Responsive Typography</h3>  
+
+      <h4>Use ems and rems</h4>
+        <p><strong>Most important:</strong> legibility.</p>
+        <ul>
+          <li>Standard font size on web is <strong>16px</strong> font size - so much larger than in print.</li>
+          <li>Optimal length for line is between 45-75 characters</li>
+          <li>Pixel is fixed size and therefore far too static. Making font size responsive: with <strong>ems and rems.</strong></li>
+          <li><strong>Em</strong> are scalable units - scaling in relation to parent element and thereby creating relationships (defining 12px or 16px as default in html; and then 3em for headings, 1em for text etc.). Parent relationship very strong with ems, if any div is given a font size, child element in div will accept this as their new base font size</li>
+          <li><strong>Rem</strong>: here font size is based on root element: <span class="css">html {font-size: 16px;}, h1 {font-size: 3rem;}</span></li>
+        </ul>
+
+      <h4>Scaling in relation to what?</h4>
+        <ul>
+          <li>Rems very helpful, but if all elements depend on root element, all site elements are interrelated in size.</li>
+          <li><strong>Modules:</strong> For responsive sites, better to create modular elements that can be scaled individually. So think about which site parts should form modules, which elements make sense as parents</li>
+        </ul>
+    </div>
+
+    <div class="post">
+      <h3>Responsive images</h3>
+      
+      <h4>Make images web-friendly</h4>
+        <p>Export images from photoshop and check if it has right size and resolution</p>
+          <ul>
+            <li><strong>Right size:</strong> smaller than 100KB and always smaller than 1MB</li>
+            <li><strong>Dimensions:</strong> no larger than 1000px wide (but as large as needed)</li>
+            <li><strong>Resolution:</strong> should be 72 ppi</li>
+            <li><strong>Web readable format</strong>: jpg, png, gif, svg. JPG good for photos.</li>
+            <li>Usually stick to jpeg and png. In GIMP, go to "export as" and select "by file extension", choose png or jpeg, hier kann das Bild auch komprimiert werden - dafür vor dem Abspeichern image quality geringer machen (bisschen reicht schon), geht nur bei jpg.</li>
+          </ul>
+      
+      <h4>Make images responsive</h4>
+        <ul>
+          <li>Nest img tag in <span class="html">&lt;figure&gt;</span> tag.</li>
+          <li>Add classes to figure tag: <span class="html">&lt;figure class="header-img"&gt;</span> or <span class="html">&lt;figure class="thumbnails"&gt;</span></li>
+          <li>In CSS documents, global Styles, add <span class="css">img {width: 100%, height: auto;}</span>. Images then inherit width of parent element where it is nested.</li>
+          <li>In sections for mobile/desktop, add specific element and add max-width and max-height: <span class="css">.top-img img {max-width: 300px; max-height: 300px;}</span> - making them flexible enough</li>
+        </ul>
+      
+      <h4>Make them fit</h4>
+        <p>If I have to add a lot of pictures and don't have size to resize all of them, make them background images. Instead of loading image into html, add it in image as CSS.</p>
+        <ul>
+          <li>First, in HTML-doc create empty div (wo das image hinkommt) mit class (thumbnail, das auch für andere thumbnails verwendet werden kann) und id (um das spezielle Bild im CSS zu laden)</li>
+          <li>In CSS-doc, load image: <span class="css">#my-img {background-image: url ('link-to-image.jpg');</span></li>
+          <li>In CSS-doc, define thumbnails:</li>
+        </ul>
+
+          <blockquote><span class="css">.thumbnail {<br>
+            background-position: center;</span> - damit nur die Ecken gecroppt werden<br>
+            <span class="css">background-size: cover;</span> - das heißt, dass es die volle Höhe und Breite des divs einnimmt<br>
+            <span class="css">background-repeat: no-repeat;</span> - damit es sich nicht wiederholt<br>
+            <span class="css">width: 40%; padding-bottom: 40%;</span> - um das Bild quadratisch zu machen; height nicht auch setzen, das würde nicht funktionieren im responsiven Design<br>
+            <span class="css">float: left;<br>
+            margin-right: 20px;</span>
+          </blockquote>
+         
+    </div>
+  
+    <div class="post">
+    
+      <h3>Responsive Iframes</h3>
+        <p>Special html tag that allows us to add html doc (hosted by other web site) in html doc</p>
+        <p>Iframes, taken out, have fixed width and height. Copy iframe in HTML-doc and nest it in <span class="html">&lt;div class="map container"&gt;</span></p>
+        <p>In CSS, define:</p>
+        
+          <blockquote><span class="css">.map-container {<br>
+            position: relative;</span> (allows us to set iframe to position: absolute)<br>
+            <span class="css">padding-bottom: 75%;</span> (not about padding, setting relationship between height and width, so aspect ratio. Depending on aspect ratio of map)<br>
+            <span class="css">height:0;</span> (padding gives it height it needs)<br>
+            <span class="css">overflow:hidden;</span> (so map does not go over parent-element)<br>
+          </blockquote>
+      
+        <p>Then define iframe properties:</p>
+          <blockquote><span class="css">.map-container iframe {<br>
+            position: absolute;<br>
+            top: 0;<br>
+            left: 0;<br>
+            width: 100%;<br>
+            height: 100%;<br></span>
+          </blockquote>
+        <p>Tool that does that automatically: <a href="http://embedresponsively.com/" target="_blank">Embed-resonsively.com</a></p>
+        
+    </div>
+  </div>
+
+  <p><a href="#">Zum Seitenanfang</a></p>
+  </div>
+  
+  <!-- post-container4: Coding with a boilerplate -->
+  
+  <div class="post-container" id="con4">
+    <h2>Coding with boilerplates and style tiles</h2>
+
+  <div class="flex-container"> 
+
+    <div class="post">
+      <h3>What is a boilerplate?</h3>
+        <p><strong>Code shell</strong>: basic html code for site - makes sense to group sites with similar layout and functions</p>
+        <p><strong>HTML5 boilerplate</strong>: used by most major companies, constantly updated. Comes with modernizr - code to normalize HTML5-code which otherwise does not work with all browsers</p>
+        <p><a href="https://html5boilerplate.com/" target="_blank">Get HTML5 boilerplate here.</a></p>
+    </div>
+    
+    <div class="post">
+      <h4>Adjust boilerplate</h4>
+        <p>Start with layout CSS. In Boilerplate, two CSS documents.<p>
+          <ul>
+            <li>Main.css: where I write my CSS code. Contains some default styles with comments.</li>
+            <li>My styles go on bottom. Start by writing all my HTML elements and classes - first header with navigation, then other elements according to order to html document</li>
+            <li><strong>Set widths</strong>: For main containers (header, main, footer), set width to 96% and 2% padding on left and right. For elements inside, give them 100%</li>
+            <li><strong>Set breakpoints</strong>: 768px tablet, 940px desktop. Replace media query in main.css and replace it with my media queries: <span class="css">@media screen and (min-width: 768px)</span></li>
+            <li>Normalize.css: contains browser compatibility styles - best not to edit it</li>
+          </ul>
+     </div>
+   
+    <div class="post">
+
+      <h3>Style tiles</h3>
+        <p>Style tiles are middle point between moodboard (sehr grob) and detailed mockup. Contains typography and interface elements like colors and patterns - creating free-floating visual language for site without getting lost in details of layout (which can change) - so layout remains fluid and adaptable</p>
+        
+        <h4>Coding style tile</h4>
+          <p>In custom styles in main.css, add in beginning section for global styles:</p>
+            <blockquote>
+              <span class="css">body, html</span> (font-faily, font-size, color)<br>
+              <span class="css">a</span> (font-weight, color, text-decoration)<br>
+              <span class="css">p</span> (font-size, line-height)<br>
+              <span class="css">h1, h2, h3, h4<br>
+              h1</span> (text-transform)<br>
+              <span class="css">h2<br>
+              h3<br>
+              h4<br>
+             .buttons</span> ...</blockquote>
+         <p>After that, style individual sections</p>
+
+    </div>
+  </div>
+
+  <p><a href="#">Zum Seitenanfang</a></p>
+  </div>
+  
+  <!-- post-container5: flexbox-->
+  
+  <div class="post-container" id="con5">
+    <h2>The flex model</h2>
+
+  <div class="flex-container"> 
+    <div class="post">
+    
+      <h3>What is flexbox?</h3>
+        <p>New layout type introduced with CSS3. Set of CSS properties to allow for more flexible layouts</p>
+        
+        <h4>Flexbox vs. box model</h4>
+        <ul>
+          <li>With <strong>box model</strong>, html elements could be either vertically oriented (display:block) or horizontally oriented (with display:inline).</li>
+          <li>Box model works well mainly for desktop versions. For other browsing experiences, certain limitations</li>
+          <li><strong>Flexbox</strong> is both vertically and horizontally oriented. Idea of having two axises (x-axis or main axis and y-axis or cross axis)</li>
+          <li>Like text-align for layout elements, both on x and y axis (center align, left align, justify, stretch vertically, top-align)</li>
+          <li>Also easily possible to change order of HTML elements</li>
+          <li>Flexbox supported mainly by new browsers (check on <a href="https://caniuse.com/" target="_blank">caniuse.com</a>)</li>
+
+        </ul>
+        
+      <h4>Define flexbox elements in HTML and CSS</h4>
+        <ul>
+          <li>In HTML doc, define section as <span class="html">class="mein-flex-container"</span></li>
+          <li>Then, define all elements in this container as <span class="html">class="meine-flex-items"</span></li>
+          <li>In CSS doc, give elements property <span class="css">{display:flex;}</span> - turns element in a flex container (makes its child elements flex-items)</li>
+          <li><span class="css">body {display:flex;}</span> - makes all body elements flex items</li>
+          <li>For all flex elements, add browser prefixes</li>
+        </ul>
+          
+          <blockquote>
+            <span class="css">display: flex;<br>
+            display: -webkit-box;<br>
+            display: -moz-box;<br>
+            display: - ms-flexbox;<br>
+            display: -webkit-flex;</span>
+          </blockquote>
+       
+    </div>
+
+    <div class="post">  
+    <h3>Flexbox properties</h3>
+
+        <h4>Justify-content</h4>
+          <p>Centers content on main axis. Determines how to situate flex-items on main axis. If I want to make flex-items bigger, add width. If I give justify-content property to flex-items, div-tags inside will also behave the same way (center or be at start...)</p>
+          <ul>
+            <li><span class="css">justify-content: flex-start;</span> - left-aligning content (at beginning of container)</li>
+            <li><span class="css">justify-content: flex-end;</span> - right-aligning content</li>
+            <li><span class="css">justify-content: space-between;</span> - aligning elements in container with even amount of space in between</li>
+            <li><span class="css">justify-content: space-around;</span> (even amount before, between and after elements)</li>
+            <li><span class="css">justify-content: initial;</span> - default value</li>
+            <li><span class="css">justify-content: inherit;</span> - take on positioning of parent-element</li>
+          </ul>
+          
+        <h4>Align-items</h4>
+          <p>Aligns elements vertically, or aligns content of items vertically if I add this property to items)</p>
+          <ul>
+            <li><span class="css">align-items: center;</span></li>
+            <li><span class="css">align-items: stretch;</span> - elements vertically fill container</li>
+            <li><span class="css">align-items: flex-start;</span> - on top</li>
+            <li><span class="css">align-items: flex-end;</span> - on bottom</li>
+            <li><span class="css">align-items: baseline;</span> - positions elements usually on top of container</li>
+            <li><span class="css">align-items: initial</span> + <span class="css">inherit</span></li>
+          </ul>
+
+        <h4>Align-content vs. align-items</h4>
+          <ul>
+            <li>Align-content has same values as align-items.</li>
+            <li>Align-items is best when I want to align a row of content vertically.</li>
+            <li>Align-content is best when I have wrapped content</li>
+          </ul>
+
+        <h4>Flex-wrap</h4>
+          <p>Tells items to wrap or not to wrap</p>
+          <ul>
+            <li><span class="css">flexwrap: wrap;</span></li>
+            <li><span class="css">flexwrap: wrap-reverse;</span> - in reverse order</li>
+            <li><span class="css">initial</span> + <span class="css">inherit</span></li>
+          </ul>
+          
+        <h4>Flex-direction</h4>
+          <p>Dictates direction of items</p>
+          <ul>
+            <li><span class="css">flex-direction: row;</span> - display items horizontally in a row</li>
+            <li><span class="css">flex-direction: row-reverse;</span> - in reverse order</li>
+            <li><span class="css">flex-direction: column;</span> - display items vertically in a column</li>
+            <li><span class="css">flex-direction: column-reverse;</span></li>
+            <li><span class="css">initial</span> + <span class="css">inherit</span></li>
+          </ul>
+        
+        <h4>Flex-basis</h4>
+          <ul>
+            <li>Sets base width of element (like min-width). If I set flex-basis for container and items, flexbox calculates amount of space left over (not used by items) and redistributes this space using flex-grow or flex-shrink properties.</li>
+            <li><span class="css">flex-basis: 200px;</span> - setting width</li>
+            <li><span class="css">flex-basis: number;</span> - unit or percentage</li>
+            <li><span class="css">flex-basis: auto;</span> - length determined by item's content</li>
+          </ul>
+
+        <h4>Flex-grow and flex-shrink</h4>
+          <ul>
+            <li>If I have 100px left, I use flex-grow property to determine how remaining space is redistributed so that elements fill up full width of container. If I set all elements to flex-grow: 1, equal distribution. If I set only one item to flex-grow 1, this item will grow by 100px, other two would stay the same.</li>
+            <li>With flex-shrink, I manage width if container is too small for divs. With flex-shrink I can set rate at which items shrink to fit inside container.</li>            
+            <li><span class="css">flex-grow: number</span> - default is 0</li>
+            <li><span class="css">flex-shrink: number;</span> - default is 1</li>
+            <li><span class="css">initial</span> + <span class="css">inherit</span></li>
+          </ul>
+           
+    </div>
+
+    <div class="post">    
+          
+      <h3>Use flexbox to create layout</h4>
+      
+        <p>Not rely entirely on flexbox, as it is not used by all browsers. Flex useful to divide up space between elements in a layout</p>
+
+        <h4>Flex-flow</h4>
+          <ul>
+            <li>Combines values for flex-direction and flex-wrap in one line of CSS. Default: row nowrap</li>
+            <li>Tells container how to display its items: which direction to display flex-items and if they should wrap.</li>
+          </ul>
+          
+          <blockquote>
+            <span class="css">flex-flow: row wrap;</span>
+          </blockquote>
+      
+        <h4>Flex</h4>
+          <p>Property flex: combination for flex-grow, flex-shrink, and flex-basis</p>
+            <ul>
+              <li><span class="css">flex: 2 100px;</span> - grow by 2, initial length 100px</li>
+              <li><span class="css">flex: auto;</span></li>
+              <li><span class="css">flex: initial;</span> + <span class="css">inherit</span></li>
+            </ul>
+
+       <h4>Order</h4>
+         <p>Property order: if I have several flex items in same container, I can tell screen in what order to display them. If for desktop, I want a sidebar to be one the right and for tablet on the left, I just have to change number of order it shows up:</p>
+
+         <blockquote>
+           <span class="css">media (min-width 768px) {</span><br>
+           <span class="css">.sidebar-1 {order: 3;}</span> - on the right<br>
+           <span class="css">.main-content {order: 1;}</span> - on the left<br>
+           <span class="css">.sidebar-2 {order: 2;}</span> - in the middle<br>
+           <br>
+
+           <span class="css">media (min-width 1200px) {</span><br>
+           <span class="css">.sidebar-1 {order: 1;}</span> - on the left<br>
+           <span class="css">.main-content {order: 2;}</span> - in the middle<br>
+           <span class="css">.sidebar-2 {order: 3;}</span> - on the right<br>
+           <span class="css">}
+         </blockquote>
+
+      <h4>Further combination of properties</h4>
+      
+        <p>Align element both horizontally and vertically</p>
+          <blockquote>
+            <span class="css">div {justify-content: center; align-items: center;}</span>
+          </blockquote>
+
+        <p>Wrap list of 6 evenly sized items</p>
+          <blockquote>
+            <span class="css">ul.flex-container {<br>
+            display:flex;<br>
+            flex-flow: row wrap;<br>
+            justify-content: space-around;<br>
+            }<br>
+            <br>
+            li.flex-item {<br>
+            width:200px;<br>
+            height: 200px;<br>
+            }</span>
+          </blockquote>
+    </div>
+
+  </div>
+  
+  <p><a href="#">Zum Seitenanfang</a></p>
+  </div>
+
+<!-- main section ends -->
+
+</div>
+
+<!-- Footer starts here -->
+  
+  <footer>
+  
+  
+  </footer>
+    
+<!-- body ends here!---------------------->
+</body>
+
+</html>
+
+
+

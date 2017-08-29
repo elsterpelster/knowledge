@@ -1,0 +1,614 @@
+<!doctype html>
+<html>
+
+<head>
+	<link rel="stylesheet" href="css/design-css.css">
+	<meta charset="utf-8">
+	<title>The beginner's guide to CSS</title>
+</head>
+
+<body>
+
+<!-- header farblich absetzen -->
+<h1 class="header">CSS</h1>
+	
+<!-- main site navigation goes on top -->
+
+<nav>
+	<ul class="top-nav">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="web.html">Tech-web basics</a></li>
+		<li><a href="html.html">HTML</a></li>
+		<li>CSS</li>
+		<li><a href="responsive.html">Responsive web design</a></li>
+		<li><a href="git.html">Git and the command line</a></li>
+		<li><a href="javascript.html">Javascript</a></li>
+		<li><a href="linux.html">Linux</a></li>
+	</ul>
+</nav>
+
+<!-- Inside nav, posts, and sidebar start here -->
+<main>
+
+<!-- inside navigation starts here -->
+	<ul class="inside-nav">
+		<li><a href="#">Zum Seitenanfang</a></li>
+		<li><a href="#what">What is CSS?</a></li>
+		<li><a href="#einbindung">Einbindung von CSS in HTML-doc</a></li>
+		<li><a href="#properties">Most important properties</a></li>
+		<li><a href="#fonts">Fonts and colors</a></li>
+		<li><a href="#height">Height and width</a></li>
+		<li><a href="#classes">Selectors, classes and IDs</a></li>
+		<li><a href="#box">Box model, margins, and paddings</a></li>
+		<li><a href="#layout">Layout and individual sections</a></li>
+		<li><a href="#best-practice">Rules and best practices</a></li>
+	</ul>
+
+</div>
+
+<!-- Posts start here -->
+
+<div class="posts">
+
+<!-- What is CSS -->
+
+	<h2 id="what">What is CSS?</h2>
+	
+		<p><strong>CSS tells browser how to display html tags</strong></p>
+		<ul>
+			<li>CSS: Cascading Style Sheets</li>
+			<li>Cascading: Vererbung – von Schriftart, Schriftfarbe, Schriftgröße auf alle Kinderelemente</li>
+			<li>Sheets: „Folien“, design.css, einzelne Folien, die Design festlegen</li>
+		</ul>
+	
+		<p><strong>Parts of CSS markup</strong></p>
+			<ul>
+				<li><span>CSS selector</span>: h1, p...</li>
+				<li><span>CSS properties</span>: name: value;</li>
+			</ul>
+		
+			<blockquote>HTML tag {<br>
+			property1: value;<br>
+			property 2: value;<br>
+			}</blockquote>
+			
+		
+		<p><strong>Example</strong></p>
+			<blockquote>
+			<span class="css">p{<br>
+			color: purple;<br>
+			width: 200 px;<br>
+			font-size: 24px;<br>
+			font family: comic sans ms;<br>
+			}</span></blockquote>
+
+<!-- Einbindung -->
+
+	<h2 id="einbindung">Einbindung + Aufbau von CSS</h2>
+		<p><strong>CSS auslagern</strong></p>
+			<p>Wenn man mehrere Seiten mit gleichem Layout hat, CSS auslagern und in html-Seiten darauf verweisen. Nicht auf zu viele CSS und externe Link-Dokumente verweisen, nicht mehr als 8, sonst müssen Geräte zu viel aufrufen.</p>	
+			<blockquote>
+				<span class="html">&lthead&gt</span><br>
+				...</br>
+				<span class="html">&lttitle&gt</span> … <span class="html">&lt/title&gt</span><br>
+				<span class="html">&ltstyle type="text/css"&gt</span><br>
+			</blockquote>
+			
+		<p><strong>CSS-Befehle in HTML-Dokument</strong></p>
+			<p>CSS-Befehle direkt an html-Elemente ranhängen: Sinnvoll, wenn man nicht auf CSS-Datei zugreifen kann wg. Admin-Rechten</p>
+			<blockquote>
+				<span class="html">&lth1&gt &ltstyle=“color:red; background:blue;&gt</span>
+			</blockquote>
+
+		<p><strong>Reihenfolge</strong></p>
+			<p>Zunächst allgemeine Features zuweisen: alle sollen Rahmen haben, padding …. Dann einzelne Abschnitte festlegen: outside to inside, top to bottom</p>
+			
+			<p>
+				<span class="css">body { ... ;}: </span> Hier Regeln, die ganze Website betreffen<br>
+				<span class="css">#outer-parts { ... ;}:</span> Bereiche um den Body<br>
+				<span class="css">#upper-part { ... ;}:</span> Header-Bereich, wo Logo usw. zu sehen ist<br>
+				<span class="css">#top-nav { ... ;}</span> Navigationsbereich für andere Seiten<br>
+				<span class="css">#inside-nav { ... ;}</span> Navigationsbereich innerhalb der Seite<br>
+				<span class="css">#posts { ... ;}</span> Einzelne Posts der Seite<br>
+			</p>
+		
+			<p><span class="css">body {</span></p>
+				<blockquote>
+					<span class="css">font-family: helvetica, arial, sans-serif;</span> - d.h., wer Helvetica sehen kann, sieht Helvetica, ansonsten Arial, ansonsten irgendeine ohne Serifen. Kann über css-fontstack.com eingesehen, kopiert und eingefügt werden<br>
+					<span class="css">color: #333333;</span> - Auswahl über <a href="https://www.webpagefx.com/web-design/color-picker/" target="_blank">Colorpicker.com</a>, kopieren der Nummerkombi<br>
+					<span class="css">}</span><br>
+				</blockquote>	
+					
+			<p><span class="css">background {</span></p>
+				<blockquote>
+					<span class="css">#eeeeee;<br>
+					}</span><br>		
+				</blockquote>
+				
+			<p><span class="css">h1 {</span></p>
+				<blockquote>
+					<span class="css">...<br>
+					}</span>
+				</blockquote>
+	
+<!-- Properties -->
+
+	<h2 id="properties">Most important properties</h2>
+	
+	<a href="https://tympanus.net/codrops/css_reference/" target="_blank">Many more CSS properties</a>
+		<h3>Schriftart, -größe, -farbe, fett/kursiv</h3>
+			<p><span class="mark">font-family</span>: accepts web safe fonts (preloaded on browser)</p>
+				<ul>
+					<li><span class="arial">arial</span>, <span class="times">times</span>, <span class="georgia">georgia</span>, <span class="tahoma">tahoma..</span></li>
+					<li><span class="serif">serif</span>, <span class="sans-serif">sans-serif</span></li>
+				</ul>
+			<p><span class="mark">font-size</span>: accepts web safe fonts (preloaded on browser)</p>
+				<ul>
+					<li>either in pixels or em (relative text size measurement, very useful for responsive web design)</li>
+					<li>15px: damit bestimme ich, dass Schriftgröße für jeden Browser 15px ist, selbst wenn der User sich das anders eingestellt hat</li>
+					<li>Besser: 1em (entspricht in Standardbrowsern 16px), oder eben 0.983em.</li>
+					<li>Meiste Browser haben &lth1&gt: 2em vom Body</li>
+					<li>Wenn ich im Body Schriftgröße auf 15x gesetzt habe, dann nehmen alle nachfolgenden Kindelemente (h, cite etc.) 15px als Bezugsgröße an. Wenn Zielgröße für h2 also 21px ist, dann 21/15=1.4em</li>
+				</ul>
+
+			<p><span class="mark">color</span>:</p>
+				<ul>
+					<li>web safe color names (red, green, blue..)</li>
+					<li>or hexadecimal values (for example at <a href="https://www.w3schools.com/css/css_colors.asp" target="_blank">W3 schools</a>.) Hex colors always start with #</li>
+				</ul>
+			<p><span class="mark">font-weight</span>:</p>
+				<ul>
+					<li><span class="bold">bold</span>, <span class="bolder">bolder</span>, <span class="normal">normal</span>, <span class="lighter">lighter</span></li>
+					<li><span class="hundred">100</span>-<span class="ninehundred">900</span></li>
+				</ul>
+			<p><span class="mark">font-style</span>:</p>
+				<ul>
+					<li><span class="italic">italic</span></li>
+				</ul>
+			<p><span class="mark">font-variant</span>:</p>
+				<ul>
+					<li><span class="small-caps">small-caps</span></li>
+				</ul>
+			<p><span class="mark">text-transform</span>:</p>
+				<ul>
+					<li><span class="capitalize">capitalize</span>, <span class="uppercase">uppercase</span>, <span class="lowercase">LOWERCASE</span></li>
+				</ul>
+			<p><span class="mark">text-decoration</span>:</p>
+				<ul>
+					<li><span class="underline">underline</span>, <span class="overline">overline</span>, <span class="line-through">line-through</span></li>
+				</ul>
+
+		<h3>Textausrichtung, Zeilenhöhe und -abstand, Wortabstand</h3>
+			<p><span class="mark">text-align</span>:</p>
+				<ul>
+					<li>left, right, center, justify</li>
+				</ul>
+			<p><span class="mark">text-indent</span>:</p>
+				<ul>
+					<li>for indenting beginning of paragraph</li>
+					<li>px, em, percentage</li>
+				</ul>			
+			<p><span class="mark">line-height</span>:</p>
+				<ul>
+					<li><span class="line-height">Zeilenabstand</li>
+					<li>in px, em, numbers, percentages</li>
+				</ul>
+			<p><span class="mark">word-spacing</span>:</p>
+				<ul>
+					<li><span class="word-spacing">between words</span></li>
+					<li>px, em, and <span class="word-spacing-negative">negative values</span></li>
+				</ul>
+			<p><span class="mark">letter-spacing</span>:</p>
+				<ul>
+					<li class="letter-spacing">within word</li>
+					<li>px, em, and <span class="letter-spacing-negative">negative values</span></li>
+				</ul>
+				
+<!-- Fonts and colors-->
+
+	<h2 id="fonts">Fonts</h2>
+		
+		<p><strong>Option A) Web safe fonts</strong></p>
+		<p><strong>Option B) Buy or link fonts</strong></p>
+		
+		<p>Buy license for web font</p>
+			<ul>
+				<li>Buy license from font website like fontsquirrel.com</li>
+				<li>Download font file ('opentype' .otf, 'eot', or 'woff'). Safe it to "font" folder in my project.</li>
+				<li>That means that I host font files on my server.</li>
+				<li>Embed fonts in CSS doc, by putting @font-face at beginning of CSS file<br>
+				<span class="css">@font-face {font-family: 'Bemio'; src: url ('fonts/Bemio.otf') format ('opentype')</span></li>
+				<li>Make sure to use single quotes</li>
+			</ul>
+    		<p>Use service like Google web fonts, Typekit, or fontstack.</p>
+			<ul>
+				<li>Bei <a href="http://www.cssfontstack.com/" target="_blank">CSS-Fontstack</a> kann ich Standardschriften einfügen</li>
+				<li><a href="https://fonts.google.com/" target="_blank">Google Fonts</a>, choose font + select font variants</li>
+				<li>Copy HTML link provided into HTML header.</li>
+				<li>Copy CSS link provided into CSS doc and specify for which selector to apply</li>
+				<li>Then I only "borrow" and Google gets access. But common practice and nice fonts.</li>
+				<li>Wenn ich Schriften verlinke, sollte ich sie auch nutzen, nehmen viel Ladezeit in Anspruch, weil jeder User Links aufrufen muss. Fancy fonts fressen viel Ladezeit und können nicht auf jedem Gerät dargestellt werden (von vielen Smartphones ausgestellt), muss man abwägen</li>
+			</ul>
+			
+	<h2 id="colors">Colors</h2>
+	
+		<p><strong>2 options for colors</strong></p>
+			<ul>
+				<li><a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank"> Web safe colors</a>, with hex values</li>
+				<li><a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">Hexadecimal values</a>: # + 6 digits or letters</li>
+				<li>Besser in Hexa als mit Farbwörtern, wird sicherer von allen Browsern erkannt</li>
+			</ul>
+
+		<p><strong>Color models</strong></p>
+			<p>RGB color model (Red, Green, Blue): #RRGGBB</p>
+				<ul>
+					<li>Additive color model: mixes colors by light passing through them</li>
+					<li>#FFFFFF = white. F= each color is turned on 100%.</li>
+					<li>#000000 = black. 0= no color turned on</li>
+					<li>#FF0000 = red</li>
+				</ul>
+			<p>CMYK color model (Cyan, Magenta, Yellow, Black): for print.</p>
+				<ul>
+					<li>Subtractive color model - different method, so web colors never perfectly match print colors</li>
+				</ul>
+		<p><strong>Add colors to CSS</strong></p>
+			<p>Background</p>
+				<ul>
+					<li><span class="css">body {background: powderblue;}</span></li>
+					<li>background also supports images. background: url('img/flower.png') no-repeat</li>
+					<li><span class="css">no-repeat</span>: problem if image is tiny. <span class="css">background: url('http://...') repeat</span></li>
+					<li><span class="css">repeat-x</span> (along x-axis) and <span class="css">repeat-y (along y-axis)</span></li>
+					<li>Position image on screen: no-repeat X Y white. Position on x and y axis + surrounding color</li>
+					<li><span class="css">background: no-repeat 10px 20px white</span></li>
+				</ul>
+			<p>Borders</p>
+				<ul>
+					<li>Necessary properties: thickness, border style, and color</li>
+					<li><span class="css">main {margin: 20px; border: 5px solid purple;}</span></li>
+					<li><span class="css">border style: solid, dashed, dotted, groove, ridge</span></li>
+				</ul>
+				
+<!-- Height and width -->
+
+	<h2 id="height">Height and width</h2>
+			
+		<p>Set height and width of HTML block elements (inline elements does not make much sense)</p>
+			<ul>	
+				<li>Fixed height/weight: section <span class="html">{margin: 20px; border: 5px dotted #333; width: 300px; height: 500px;}</span> - meaning they stay the same for all screen sizes (not responsive)</li>
+				<li>Not a good idea to set both height and width, else overflow.</li>
+				<li>I can also add <span class="html">{overflow: hidden; overflow: scroll;}</span></li>
+			</ul>
+
+<!-- Classes and IDs -->
+
+	<h2 id="classes">Selectors, classes and IDs</h2>
+
+	<h3>Selektoren</h3>
+		<ul>	
+			<li>Elementselektor: <span class="css">body {...;}, p {...;}</span></li>
+			<li>Klassenselektor: verfeinern von Klassen. <span class="css">.rot {...} </span>oder <span class="css">p.rot {...}</span> – gilt dann nur für rote Absätze</li>
+			<li>ID-Selektor: spricht ein Element pro Dokument an, dass diese ID hat. Ich kann auch Absätzen eine ID geben. <span class="css">#navi {...}</span></li>
+			<li>Kontextselektor: spricht Elemente mit bestimmten Eigenschaften an, innere Elemente in Elternelement (z.B. alle Bilder in Datenzellen): <span class="css">td img{...}</span></li>
+			<li>Pseudoelementen-Selektor: <span class="css">p:first-letter{…}</span> spricht z.B. nur den ersten Buchstaben eines jeden Paragraphen an. Buchstabe wird behandelt, als wäre es ein Element, obwohl da kein Tag ist</li>
+			<li>Attributselektor: spricht alle Elemente an, die bestimmtes Attribut mit Wert xy haben. <span class="css">Input[type=submit]</span>. Damit werden also nicht andere Textfelder erwischt, sondern nur input type submit, d.h. Buttons zum Abschicken.</li>
+		  	<li>Oder auch <span class="css">Input[placeholder]</span>: Nur inputs, die placeholder-Attribut haben (Wert muss dabei nicht bestimmt werden)</li>
+		</ul>
+		
+	<h3>Classes:</h3>
+		<p>General rules with selector h3 {...}, exceptions with classes</p>
+			<ul>
+				<li>in CSS: <span class="css">.h3-exc {color: blue;}</span></li>
+				<li>in HTML: <span class="html">&lth3 class="h3-exc"&gt</span></li>
+			</ul>
+	
+		<p>Beispiel: alle h3 sollen blau werden, aber ein paar rot</p>
+			<ul>
+				<li>Dann lege ich <span class="css">h3 {color: blue;}</span> fest</li>
+				<li>und lege eine Klasse für die Ausnahmen an: <span class="css">.h3-ausnahme{color: #FF0000;}</span></li>
+				<li>und markiere dann im HTML doc die Ausnahme-H3s: <span class="html">&lth3 class="h3-ausnahme"&gt</span>Überschrift<span class="html">&lt/h3&gt</span></li>
+			</ul>
+	
+		<p>Universalattribut, kann nicht nur einem Element zugeordnet werden</p>
+			<ul>
+				<li>Sondern auch anderen HTML-Elementen im Dokument (ein paar p's usw.)</li>
+				<li>Andersrum können HTML-Elemente mehrere Klassen haben.</li>
+			</ul>
+		
+	<h3>IDs</h3>
+	
+	<p>ID: Attribute only for one ID (<span class="css">#h3-extra</span>, ...)</p>
+        
+	        <ul>
+	        	<li>ID-selector: spricht das eine Element an, das diese ID hat #h3-extra</li>
+			<li>in CSS: <span class="css">#h3{background}</span></li>
+			<li>Nur ein Element pro ID (gibt nicht 2 #navi)</li>
+			<li>Andersherum können Elemente auch nur eine ID haben</li>
+		</ul>
+	
+	<h3>Rules for IDs and Classes</h3>
+	
+		<p><strong>Names for IDs and classes</strong></p>
+			<ul>
+				<li>Not start with number</li>
+				<li>Name: say what it does, not how it looks - so "alert" rather than "red" (semantic web, also, more functional)</li>
+			</ul>
+		<p>Speak to certain elements in my class</p>
+			<ul>
+				<li>I want to change list items in my <span class="italic">inside navigation</span> so that they appear as block elements with pink background and 5px margin between list elements</li>
+				<li>I cannot address the whole inside-navigation, because then I cannot mark the margins (and it would look like a pink block)</li>
+				<li>So I want to address the list items in my inside-navigation</li>
+				<li>First, in my HTML doc I mark inside navigation as a class: <span class="html">&ltul class="inside-nav"&gt</span></li>
+				<li>Then in the CSS doc, I address list items in this class:</li>
+			</ul>
+					<blockquote>
+						<span class="css">.inside-nav li {</span><br>
+						<span class="css">list-style-type: none;</span><br>
+						<span class="css">display: block;</span><br>
+						<span class="css">background: pink;</span><br>
+						<span class="css">margin: 5px;</span><br>
+						<span class="css">}</span>
+					</blockquote>
+			<ul>
+				<li>Parent-element child-element {define;}</li>
+			</ul>
+		<p>Pseudoklasse:</p>
+			<ul>
+				<li><span class="css">a:hover {font-style: italic;}</span>: d.h. alle Links, über die ich mit der Maus hovere, werden kursiv.</li>
+				<li>Pseudoklassen, weil nicht auf ein HTML-Element an sich zugegriffen wird (a bleibt unberührt), sondern auf Element in bestimmtem Zustand</li>
+			</ul>
+		<p>Wertigkeit: Ausnahme schlägt Regel, d.h. ID schlägt Klasse, Klasse schlägt Element</p>
+
+<!-- Box model -->
+
+	<h2 id="box">Box model, margins, and paddings</h2>	
+	
+		<p><strong>Box model:</strong></p>
+		<p>Most HTML elements are box elements (like p)</p>
+		<p>Box model: margin, border, padding, content</p>
+			<ul>
+				<li>Border: around box, making box visible</li>
+				<li>Padding: inside box, between border and text of paragraph</li>
+				<li>Margin: outside box, between boxes</li>
+			</ul>
+		<p><strong>Margin & padding:</strong></p>
+			<ul>
+        			<li>Margin & padding accept pixels, em, percentage</li>
+				<li>Margin + padding can be specified: im Uhrzeigersinn, d.h. margin-top, margin-right, margin-bottom, margin-left</li>
+				<li><span class="css">div { margin: 0px 20px 0px 10px }</span></li>
+				<li>Abkürzungen (machen Sinn auch wegen Ladezeiten) – ein Wert für alle, zwei Werte für oben/unten und rechts/links, drei Werte für oben, rechts/links, unten</li>
+			</ul>
+	
+<!-- Layouts -->
+	<h2 id="layout">Layout and individual sections</h2>
+
+		<h3>How to arrange HTML elements on web page</h3>
+			<ul>
+				<li>All good layouts use grid</li>
+				<li>Which sections do I have, which is most important (most space)</li>
+			</ul>
+		
+		<p><strong>Ways of organizing my texts</strong></p>
+			<ul>
+				<li><span class="mark">1-column layout:</span> showing off some of my content (image, text, video)</li>
+				<li><span class="mark">2-columns layout:</span> for blog sites etc. Links to recent articles/authors can go in sidebar</li>
+				<li><span class="mark">3-columns layout:</span> for example for blogs: blog feed + sidebar with links + twitter feed.. anything where home page serves as portal to more information.</li>
+				<li><span class="mark">Gridded layout (Kachel):</span> Portal-Charakter. Im Gegensatz zu 3-columns werden hier die Spalten nicht als Units wahrgenommen</li>
+				<li><span class="mark">Masonry layout:</span> ähnlich wie gridded, aber versetzte Boxen (weniger streng)</li>
+			</ul>
+					
+		<p><strong>Positionieren</strong></p>
+		
+			<p>Fixed: festes Positionieren</p>
+				<ul>
+					<li>Hinweis "Seitenanfang" soll immer rechts-mittig zu sehen, egal wie ich scrolle.</li>
+					<li>Nicht für mobile Geräte geeignet</li>
+					<li>Bezieht sich auf Bildschirmausschnitt, bleibt beim Scrollen an gleicher Stelle, immer sichtbar</li>
+				</ul>
+				
+				<blockquote>
+					<span class="css">#posts {<br>
+					position:fixed;</span> - bezieht sich immer auf Ausschnitt, den ich gerade sehe<br>
+					<span class="css">top:45%</span> - in der Mitte<br>
+					<span class="css">padding:10px;<br>
+					}</span>
+				</blockquote>		
+							
+				<ul>
+					<li>Make object always sit in middle of the page: Give it position fixed, with left: 50%, and then set negative margin equivalent to half of its width.</li>
+				</ul>
+				
+				<blockquote><span class="css">#myobject{<br>
+					position: fixed;<br>
+					width: 300px;<br>
+					top: 10px;<br>
+					left: 50%<br>
+					margin-left: -150px;<br>
+					}</span>
+					</blockquote>		
+			
+			<p>Absolute:</p>
+				<ul>
+					<li>Bezugspunkt linke obere Ecke, padding auch nicht mit einbezogen</li>
+					<li>Bei Werten oben wäre das also 30px von linker oberer Ecke nach unten geschoben</li>
+				</ul>
+			
+			<p>Verschieben über top, left, bottom, right</p>
+				<blockquote>
+					<span class="css">#posts {<br>
+					position:relative;<br>
+					top:30px;</span> D.h. 30 px von Ausgangsposition nach unten verschoben<br>
+					<span class="css">left:0;<br>                                  
+					}</span>
+				</blockquote>          
+						
+		<p>Float element</p>
+			<ul>
+				<li>Float command makes block elements (sections, p, div...) float next to each other</li>
+				<li><span class="css">{float: none}</span>: default value</li>
+				<li><span class="css">{float: left}</span>/ <span class="css">float: right</span></li>	
+				<li><span class="css">{float: inherit}</span>: inherits floating character from parent element</li>
+				<li>I have main content and sidebar. If I make both <span class="css">{float:left;}</span>, they will sit next to each other</li>
+				<li>Then add margins of 30px. to show then as columns</li>
+			</ul>
+		
+		<p>Document flow</p>
+			<ul>
+				<li>Usually, block elements stack on top of each other and inline elements display inline.</li>
+				<li>If I have 3 divs, and I make div1 and div2 <span class="css">{float-left;}</span> and div2, they are taken out of the normal document flow - div3 does not see them, and so goes to top left side of website (appearing to be behind div1 and div2)</li>
+			</ul>
+			
+			<p>To avoid this:</p>
+				<ul>
+					<li>not float too much, and better float few big elements and not many little (div around main, div around aside)</li>
+					<li>Overflow property. <span class="css">div {overflow: auto;}</span>: tells html element what to do when its contents don't fit into container, to expand to necessary height</li>
+					<li>Clear property. <span class="css">div {clear: both;}</span>: tells element whether other floating elements are allowed to float next to it (and if so, on which sides of the element), or whether element needs to be moved down below floating elements</li>
+					<li>So for footer: <span class="css">div {clear: both;}</span></li>
+				</ul>	
+
+		<h3>Positionen der Layout-Teile berechnen</h3>
+			<p>Fit 2 divs (columns) in 900px section: 600px left columns, 300px right columns. But then no margin between columns</p>
+			<p>Subtract 20px margin around each side</p>
+				<ul>
+					<li>600 - 40: 560</li>
+					<li>300 - 40: 260</li>
+				</ul>
+				
+			<p>Text positionieren:</p>
+				<ul>
+					<li>Am besten: Positionen von Postings (oder anderen normalen Inhaltsteilen) gar nicht definieren, liegt praktisch unter anderen Elementen (was generell Sinn macht)</li>
+					<li>Text würde sich allerdings auch unter diese Elemente schieben, um das zu verhindern, padding definieren</li>
+				</ul>
+					
+				<p><span class="css">#posts {<br>
+				padding:150px 30px 30px 271px<br>
+				}</span></p>
+					<ul>
+						<li>150px top heißt 120px für header und 30px margin</li>
+						<li>30px: right, margin</li>
+						<li>30px: bottom, margin</li>
+						<li>271px: left, 211px für top.navi + 30px margin (Textseite) + 30px margin (zur Navigation)</li>
+					</ul>
+							
+		<h3>Einzelne Sektionen</h3>
+		
+			<p>Navigation</p>
+				<ul>
+					<li>In der Navigation: Link für Seite, auf der ich mich gerade befinde, ausstellen: für Blinde und Leute, die das Navi mit Tastatur bedienen</li>
+					<li>In HTML-Element der jeweiligen Seite den Link rausnehmen, statt dessen mit „strong“ markieren (kann man auch anders markieren, mit „strong“ wird es logisch sinnvoll markiert)</li>
+					<li>Dann im CSS #top.navi strong so definieren wie die Links: <span class="css">#top.navi a, #top.navi strong { ... }</span></li>
+				</ul>
+			
+		<h3>Some positioning tricks</h3>
+			<p>Center website in browser window:<span class="css"> margin: auto;</span>:</p>
+				<blockquote><span class="css">#container {<br>
+				width: 960px;<br>
+				margin: auto;<br>
+				}</span></blockquote>
+			<p>Position element relative to its parent/website/browser window</p>
+				<ul>
+					<li>Default position for all elements is <span class="css">static</span>.</li>
+					<li><span class="css">relative</span> sets position relative to parent element</li>
+					<li><span class="css">absolute</span> sets position relative to website</li>
+					<li><span class="css">fixed</span> sets position relative to browser window</li>
+				</ul>
+			<p>Set the element's position by using top, left, bottom, right properties</p>
+				<blockquote><span class="css">#myobject{<br>
+				position: fixed;<br>
+				top: 10px;<br>
+				left: 500px;<br>
+				}</span></blockquote>
+			<p>Damit auf jeder Seite Scrollbalken erscheint (egal wie kurz sie ist – das ist sinnvoll, damit alle Seiten gleich breit sind)</p>
+				<blockquote><span class="css">html{<br>
+				min-height:100%;<br>
+				margin-bottom:1px;<br>
+				overflow-y:scroll;<br>
+				overflow-x:scroll;<br>
+				}</span></blockquote>									
+
+<!-- Style guides and best practices -->
+
+<h2 id="best-practice">Rules and best practices</h2>
+
+
+  <h3>Coding best practices</h3>
+    <p>Jedes Webprojekt stellt neue Anforderungen. Deswegen kann man vor allem Herangehensweise, Prozess optimieren, um verlässlich zu guten Resultaten zu kommen. Im Web design heißt das: viel Planen, Wireframen, Persona + User Testing, Iteration and Refinement. Im Web development helfen unter anderem coding best practices: industry standards for structuring and organizing code.</p>
+
+  <h4>Organize code</h4>
+    <p>Organize by file type (css folder, image folder, js folder - dann müssen auch alle file paths daran angepasst werden, d.h. Link zu Bild immer img/....jpg). Organize code in file: indent nested elements. Google coding style guide: use two spaces instead for tabs</p>
+
+  <h4>Style guides</h4>
+    <p>Important style guides: Google and GitHub Coding StyleGuides (used by many people)</p>
+    <ul>
+      <li>Always use https protocol</li>
+      <li>Indent by 2 spaces at a time</li>
+      <li>Remove white spaces, and omit optional tags (like beginning and end of html, ...) <a href="https://html.spec.whatwg.org/multipage/syntax.html#syntax-tag-omission" target="_blank">Rules for tag omission</a></li>
+      <li>Use <span class="html">meta charset="utf-8"</span>. Don't specify encoding of style sheets as they assume UTF-8</li>
+      <li>Explain code in comments: what does it cover, what purpose does it serve, why is respective solution used? (depending on complexity and purpose)</li>
+      <li>Action items: mark to-dos and action items with TODO</li>
+      <li>Be consistent, and don't make up random best practices - adapt to what others do.</li>
+    </ul>
+    
+  <h4>Style guide for HTML</h4>
+    <ul>
+      <li>Use elements for what they have been created (p for paragraphs, h for headings)</li>
+      <li>Strictly separate structure (markup), presentation (style sheets) and behavior (scripts). Link as few style sheets and scripts as possible</li>
+      <li>No need for entity references (for euro, dash, ...), only exceptions for characters with special meaning like HTML like < and &</li>
+      <li>Use a new line for every block, list, or table element</li>
+    </ul>
+
+  <h4>Style guide for CSS</h4>
+    <ul>
+      <li>Use shorthand properties whereever possible</li>
+      <li>For example: <span class="css">p{font: 100%/1.6 palatino, georgia, serif;}</span> - 100% font-size, 1.6 line-height, p/g/s font-family</li>
+      <li>Omit units after 0, and omit 0 in values (so .8em)</li>
+      <li>Alphabetize declarations</li>
+      <li>Use a space before curly brackets and after a property name's colon - <span class="css">font-weight: bold</span></li>
+      <li>Separate and selectors and declarations by new lines, and always start new line for each selector and for each declaration</li>
+      <li>Always put blank line between rules</li>
+    </ul>
+    
+  <h4>Best practices for names</h4>
+    <ul>
+      <li>No spaces in anything</li>
+      <li>Separate words in IDs and class names by a hyphen (not underscore - also better for SEO)</li>
+      <li>Use ID and class names that reflect the purpose of element (and not that explain what it does, so not <span class="css">.button-green</span>)</li>
+      <li>No CamelCase and NoPascalCase in HTML and CSS (for JavaScript ok)</li>
+      <li>Only use lowercase (also for hex names)</li>
+      <li>Be as short as possible but as long as necessary (so #nav instead of #navigation) - rule of thumb: no more then 20 characters in file name</li>
+    </ul>
+
+  <h4>Und sonst</h4>
+	<ul>
+		<li>Bei CSS nie Anführungszeichen, außer bei Schriftarten</li>
+		<li>Organize CSS like HTML</li>
+		<li>Avoid negative margins</li>
+		<li>Avoid fixed heights</li>
+		<li>Don't use too many borders</li>
+		<li>Don't float too much</li>
+		<li>Avoid floating to the right</li>
+		<li>If two elements share same properties, I can combine them: <span class="css">h1, p {color: black; font-family: sans-serif;}</span></li>
+	</ul>
+		
+</div>
+		
+</main>
+
+<!--Resourcen-->
+
+<div class="aside">
+
+	<h3 id="#resources">Useful links</h3>
+		<p><a href="http://wiki.selfhtml.org/wiki/CSS" target="_blank">Self-HTML: CSS-Ressourcen</a></p>
+		<p><a href="http://wiki.selfhtml.org/wiki/CSS/Einbindung" target="_blank">Einbindung von CSS in ein HTML-Doc</a></p>
+		<p><a href="http://www.ampsoft.net/webdesign-l/windowsmacfonts.html" target="_blank">Gängige Standardschriften</a></p>
+		<p><a href="https://tympanus.net/codrops/css_reference/" target="_blank">Many CSS properties</a>
+		<p><a href="https://www.w3schools.com/colors/colors_names.asp" target="_blank">Web safe colors</a></p>
+		<p><a href="https://www.w3schools.com/colors/colors_picker.asp" target="_blank">Hexadecimal values</a></p>
+		<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/padding" target="_blank">W3 schools on padding</a></p>
+		<p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/margin" target="_blank">W3 schools on margin</a></p>
+
+</div>
+
+</body>
+
+</html>

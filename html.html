@@ -1,0 +1,461 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="css/design-html.css">
+	<title>The beginner's guide to HTML</title>
+	<meta charset="utf-8">
+</head>
+
+<body>
+
+<!-- TO DO: validate validate validate! -->
+
+<!-- header farblich absetzen -->
+	<header>
+		<h1>HTML Skills</h1>
+	</header>
+
+<!-- main site navigation goes on top -->
+	<nav>
+		<ul class="top-nav">
+			<li><a href="index.html">Home</a></li>
+			<li><a href="web.html">Tech-web basics</a></li>
+			<li><strong>HTML</strong></li>
+			<li><a href="css.html">CSS</a></li>
+			<li><a href="responsive.html">Responsive web design</a></li>
+			<li><a href="git.html">Git</a></li>
+			<li><a href="javascript.html">Javascript</a></li>
+			<li><a href="linux.html">Linux</a></li>
+		</ul>
+	</nav>
+	
+<!-- inside navigation starts here -->	
+
+<main>
+ 
+   	<h1 id="seitenanfang">HTML</h1>
+	<ul>
+		<li><a href="#grundbegriffe">Was ist HMTL?</a></li>
+		<li><a href="#struktur">Die Grundstruktur einer Seite</a></li>
+		<li><a href="#tags">Die wichtigsten Tags</a></li>
+		<li><a href="#images">Images</a></li>
+		<li><a href="#icon">Icon fonts</a></li>
+		<li><a href="#links">Links</a></li>
+		<li><a href="#syntax">Syntax</a></li>
+		<li><a href="#iframes">Iframes</a></li>
+		<li><a href="#practical">Praktische Dinge und Tools</a></li>
+		<li><a href="#resources">Resources</a></li>
+	</ul>
+
+<!-- to do: span mit Farbe versetzen -->
+
+<!-- Section 1: Grundbegriffe -->
+
+<div class="post">
+	<h2 id="grundbegriffe">Was ist HTML?</h2>
+	
+	<p>HTML was created by Tim Berners-Lee at CERN.</p>
+		<ul>
+	        	<li>Sharing docs via internet.</li>
+	        	<li>TBL invented HTML together with URI, HTTP, and web browser</li>
+        		<li>Web browser: software to read HTML files via HTTP.</li>
+        		<li>Web browsers are able to interpret html markups and present their structure accordingly.</li>
+		</ul>	
+	
+	<p><strong>Was machen HTML und CSS?</strong></p>	
+	<p>Dokumentenstruktur vs. Dokumentendarstellung</p>
+		<ul>
+			<li>Struktur beschreibt Aufbau, Untergliederung (Überschriften, Gliederung, Absätze..).</li>
+			<li>Darstellung betrifft Formatierung und Layout des Dokuments.</li>
+			<li>CSS definiert Layout der Strukturelemente, passt auch Darstellung an unterschiedliche Ausgabemedien an (Bildschirmgröße, akustische Ausgabe)</li>
+			<li>CSS-Befehle können nicht vom Browser gelesen werden, nur für Gestaltung zuständig</li>
+			<li>Ein design.css-Sheet definiert Aussehen aller Seiten einer Website</li>
+		</ul>
+	
+	<p><strong>Statisch/dynamisch</strong></p>
+		<ul>
+			<li>HTML5 und CSS können nur Oberfläche, erstellen eine statische Website
+			<li>Statisch: kann auch Videos erhalten, heißt dass jeder User das Gleiche sieht.</li>
+			<li>Dynamische Elemente wären z.B. Kontaktformulare, Googlemaps.</li>
+			<li>Die können auf HTML-Seite zwar erstellt werden, aber nur mit externem Dienst nutzbar gemacht werden (CMS/Shopsoftware)</li>
+			<li>Responsive Websites passen sich an Geräte an (für mobile Geräte, Seiten minimieren usw.)</li>
+    		</ul>
+    	
+    	<p><a href="#">Zum Seitenanfang</a></p>
+    	
+</div>	
+
+<!-- Section 2: Die Grundstruktur einer Seite -->
+
+<div class="post">
+	<h2 id="struktur">Die Grundstruktur einer Seite</h2>	
+		<blockquote>
+			<span class="html">&lt!doctype html&gt</span><br>
+			<span class="html">&lthtml&gt</span><br>
+			<span class="html">&lthead&gt</span>: Hier übergeordnete Infos, Titel und Metadaten über die Seite, die nicht im Browser zu sehen sind<br>
+			<span class="html">&lttitle&gt:</span>: Titel der Seite, die im Reiter oben zu sehen ist, SEO-relevant<br>
+			<span class="html">&ltmeta charset="utf-8"&gt</span> - Browser haben unterschiedliche Kodierungssysteme (UTF-8). Muss im html-head so angegeben werden. Zusätzlich noch so abspeichern. Am besten als UTF-8 ohne BOM. Nicht mit jedem Editor möglich (z.B. nicht Phase5)<br>
+			<span class="html">&lt/head&gt</span><br>
+			<span class="html">&ltbody&gt</span>: Hier Navigation, (sichtbarer) Titel der Seite und Überschriften, Haupttext, Sidebars<br>
+			<span class="html">&lt/body&gt</span><br>
+			<span class="html">&lt/html&gt</span>
+		</blockquote>
+
+		<p><a href="#">Zum Seitenanfang</a></p>
+</div>
+
+<!-- Section 3: Tags -->	
+<div class="post">
+
+	<h2 id="tags">Die wichtigsten Tags</h2>
+		<ul>
+			<li><a href="#meta">Meta tags</a></li>
+			<li><a href="#text-tag">Content tags</a></li>
+			<li><a href="#structure">Structure tags</a></li>
+			<li><a href="#syntax">Syntax-Regeln</a></li>
+		</ul>	
+		
+	<!-- Meta tags-->
+		<h3 id="meta">Meta tags</h3>
+			<p>Meta tags tell computer things about the document and the site, not important for structure as such.</p>
+			<p>Comment tag: <span class="html">&lt!--This is my comment--&gt</span></p>
+			<p><span class="html">&lthead&gt</span>: linking to stylesheets and scripts<br>
+				<blockquote>
+					<span class="html">&lt!doctype html&gt</span>: tells browser that this is html doc<br>
+					<span class="html">&lthtml&gt</span> tells beginning and end of html in file &lt/html&gt<br>
+ 					<span class="html">&ltmeta charset="utf-8" /&gt</span>:  meta tag can have many attributes<br>
+       	    				<span class="html">&lttitle&gt</span>: what can be seen in tab<br>
+					<span class="html">&ltbody&gt</span>: things that user sees<br>
+ 				</blockquote>
+					
+	<!-- Content tags-->
+		<h3 id="text-tag">Content tags</h3>
+			<h4>Text tags</h4>
+				<ul>
+			        	<li><span class="html">&lth1&gt</span> / <span class="html">&lth2&gt</span> <span class="html">&lth3&gt</span> / <span class="html">&lth4-h6&gt</span>: headlines</li>
+				        <li><span class="html">&ltp&gt</span>: paragraph</li>
+				</ul>
+
+			<h4>Marker tags</h4>
+				<ul>
+					<li><span class="html">&ltstrong&gt</span>: standing out, bold</li>
+				        <li><span class="html">&ltem&gt</span>: emphasized, usually italic</li>
+				</ul>
+        			
+       			<h4>Special tags</h4>
+        			<ul>
+        				<li><span class="html">&lt/br&gt</span>: line break w/o paragraph (auch für extra Leerzeile)</li>
+					<li><span class="html">&m dash;</span>: em-dash</li>
+					<li><span class="html">&ltabbr&gt</span>: abbreviation or acronym</li>
+					<li><span class="html">&lthr&gt</span>: erzeugt graue Linien</li>
+				</ul>
+			    		
+			<h4>List tags</h4>
+		    		<ul>
+		    			<li><span class="html">&ltol&gt</span>: ordered/numbered list</li>
+					<li><span class="html">&ltul&gt</span>: unordered list, for most things</li>
+			  		<li><span class="html">&ltli&gt</span>: list elements</li>
+			  		<li>Für Navigation sinnvoll, OL zu machen und Nummerierung verschwinden zu lassen. Optisch ähnlich, aber für Logik wichtig, Struktur wird besser, Hierarchien und Verschachtelungen lassen sich besser darstellen</li>
+				</ul>					  	
+				
+			<h4>Button tags</h4>
+		    		<ul>
+			    		<li><span class="html">&ltbutton&gt</span>: clickable button</li>
+				</ul>		
+			
+	<!--Structural tags-->
+		<h3 id="structure">Structural tags</h3>
+			<p>Very important for CSS, but no logical meaning</p>
+			
+			<p><strong>Div tags</strong> - define division or section of my site</p>				
+				<ul>
+					<li>If I have 2 columns, I mark up both columns with div tags to identify them</li>
+					<li>header, sidebar, etc. get div tags</li>
+					<li>div tags can be nested inside each other</li>
+				</ul>
+				
+				<blockquote>Anwendungsbeispiel:<br>
+					<span id="span-css">.stop{clear:both}</span> – heißt, dass bei dieser Klasse aufgehört wird zu floaten<br>
+					<span class="html">&ltdiv class="stop"&gt
+				</blockquote>
+
+			<p><strong>Span</strong> - einzelne Elemente markieren, die nicht mit html-Tag markiert sind</p>
+				<ul>
+					<li>wie div, Textgestaltung aber innerhalb der Zeile, hat auch keine logische Bedeutung.</li>
+					<li>Man könnte auch theoretisch Element mit „strong“ markieren und strong eine Klasse anhängen – hätte den gleichen optischen Effekt, „strong“ wird aber von Suchmaschinen gelesen und interpretiert, ist also ein logischer Unterschied</li>
+					<li>Inline-Element, geht nicht über Absätze rüber</li>
+				</ul>
+
+		</ul>
+
+	<!--Structural HTML5 tags-->
+		<h4>Structural HTML5 tags</strong></h4>
+			<p>Structural tags allow to be more specific about what the sections they are rendering - provide common language and logic for coders and computers. Good for SE and blind people, too. Called semantic tags - semantic web, movement to store data in a way that computers and people can understand
+				<ul>	
+					<li><span class="html">&ltheader&gt</span>: introductory content at top of page (page title, logo, navigation)</li>
+					<li><span class="html">&ltnav&gt</span>: navigation area</li>
+					<li><span class="html">&ltmain&gt</span>: for main part between header, nav, sidebar, and footer</li>
+					<li><span class="html">&ltaside&gt</span>: sidebar - content set aside from content it's placed within</li>
+					<li><span class="html">&ltsection&gt</span>: for sections of side</li>
+					<li><span class="html">&ltarticle&gt</span>: for articles, blog posts etc., independent content that makes sense on its own</li>
+					<li><span class="html">&ltfooter&gt</span>: information about sitemap, contacts, copyright info</li>
+					<li><span class="html">&ltaudio&gt</span>: defines sound content</li>
+					<li><span class="html">&ltdiv&gt</span>: for everything else, is very indescript</li>
+				</ul>	
+		
+		<p><a href="#">Zum Seitenanfang</a></p>
+	
+</div>
+
+<!-- Section 4: Images -->
+<div class="post">
+
+	<h2 id="images">Images</h2>
+
+		<p><span class="html">&ltimg&gt</span>: image is a self-closing tag!</p>
+			<ul>
+				<li><span class="html">&ltimg src="..." alt="..." /&gt</span></li>
+				<li>"src" is image attribute, tells computer where image is stored (on which server, so URL address)</li>
+				<li>"alt" is attribute to describe what image shows, important for blind and SEO</li>
+			</ul>
+
+		<p><span class="html">&ltfigure&gt</span>-Markierung:</p>
+			<ul>
+				<li>Image ist Inline-Element, Figure Block-Element.</li>
+				<li>Figure ähnlich wie div, eignet sich aber für Bilder besser, weil sie bestimmte Eigenschaften hat (div eigenschaftslos)</li>
+				<li>Figure macht bisschen Abstand, markiert Bild als solches (für Suchmaschinen) und erlaubt <span class="html">&ltfigcaption&gt</span> und andere Elemente</li>
+			</ul>
+
+		<p>Bildunterschrift:</p>
+			<blockquote>
+				<span class="html">&ltfigure&gt<br>
+				&ltimg src=…&gt<br>
+				&ltfigcaption&gt</span>Weingut<span class="html"&lt/figcaption&gt<br>
+				&lt/figure&gt</span>
+			</blockquote>
+
+		<p>Copyright-Angabe © in Bildunterschrift:</p>
+			<blockquote>
+				<span class="html">&ltfigcaption&gt</span>Weingut<span class="html">&ltcite&gt &-copy</span>Esther Wahlen<span class="html">&ltfigcaption&gt</span>
+			</blockquote>
+
+		<p>Bildformat und -größe</p>
+			<ul>
+				<li>Image file types: .jpg, .png, .gif supported by most browsers, for most others plugins used.</li>
+				<li>Img. not larger than 1 MB. Startseite insgesamt sollte nicht mehr als 100kb betragen. Muss schnell laden, normaler User hat 2sec. Orientierungsphase, wenn dann nicht alles geladen ist, wird er Seite verlassen.</li>
+				<li>Für Bildstrecken usw. auch größere Bilder möglich, aber nicht in der Vorschau</li>
+			</ul>
+
+		<p>Einbettung in HTML</p>
+			<ul>
+				<li>Bilddatei in Ordner abspeichern, der mit hochgeladen wird und relativen Pfad vom HTML-Doc setzen:</li>
+				<li>Eine Ebene hoch: <span class="html">&ltimg src="../bilder/dino1.gif"&gt</span></li>
+				<li>Zwei Ebenen hoch: <span class="html">&ltimg src=“../../bilder/dino.gif"&gt</span></li>
+			</ul>
+
+</div>
+
+<!--Section 5: Icon fonts -->
+<div class="post">
+
+	<h2 id="icon">Icon fonts:</h2>
+	  <p>Icon fonts are little icons. Load font like a web font and then add them in document</p>
+	 	<ul>
+	 		<li>Download from <a href="http://fontawesome.io/" target="_blank">fontaweseome website</a></li>
+	 		<li>Locate fonts in font folder, create folder "fonts" in project, and copy them there</li>
+	 		<li>Copy css files in font-awesome css folder and copy them in css folder in my project</li>
+	 		<li>Add links to fonts in each html document</li>
+	 		<li>Add icons in my navigation bar by using &lti&gt tag, so <span class="html">&lti class="fa fa-code"&gt&lt/i&gt</span></li>
+	 		<li>Define which fa-icon I want to use, for example fa-code, or any other from this <a href="http://fontawesome.io/cheatsheet/" target="_blank">cheatsheet</a>.</li>
+	 		<li>Icons can be <a href="http://fontawesome.io/examples/" target="_blank">made responsive:</a> made larger, wider, put instead of bullets, animated and more</li>
+</div>
+
+<!--Section 6: Links-->
+<div class="post">
+
+	<h2 id="links">Links</h2>
+	
+		<h3>Links nach außen</h3>
+			<ul>
+				<li><span class="html">&lta href="URL" target="_BLANK"&gt</span>Descriptive text<span>&lt/a&gt</span>: linking to external site/in new tab</li>
+				<li><span class="html">href</span> and <span>target</span>: attributes</li>
+				<li>link image: <span class="html">&lta href="URL" target="_BLANK"&gt</span> <span class="html">&ltimg src="URL img" alt="Image" /&gt</span>Bild<span class="html">&lt/a&gt</span></li>
+			</ul>						        
+			
+			<p>Follow/no follow</p>
+				<ul>
+					<li>Verbindung meiner Seite mit Seite, auf die ich verlinke</li>
+					<li>Wenn ich über Seite schreibe, die ich dezidiert nicht empfehlen will (Google-Index), kann ich no-follow einfügen. Viele Kommentarspalten haben no-follow als Default. Hat auf Linkverhalten keinen Einfluss</li>
+					<li class="html">&lta href="..." rel="no follow"&gt</li>
+				</ul>
+
+		<h3>Innerhalb des Dokument verlinken (Sprünge)</h3>
+			<ul>	
+				<li>Element, zu dem ich springen will, ID geben: <span class="html">&lth2 class="h2"&gt</span></li>
+				<li>In der Inside-Navigation ID verlinken: <span class="html">&lta href="#h2"&gt</span></li>
+				<li>Zum Seitenanfang (immer): <span class="html">&lta href="#"&gt</span></li>
+			</ul>
+
+			<p>Link zu PDF-Dokumen: <span class="html">&lta href=“materialien/script.pdf“&gt</span>Download Script<span class="html">&lt/a&gt</span></p>
+			<p>Link zu E-Mail: <span class="html">&lta href=“mailto:ich@web.de“&gt</span>Kontakt<span class="html">&lt/a/gt</span></p>
+		
+		<h3>Was macht Browser mit Links?</h3>
+			<ul>
+				<li>Kann .html, png, jpg, gif direkt (d.h. ohne Hilfsprogramme) darstellen.</li>
+				<li>Für Formate wie PDF: wenn Programm zur Darstellung im Browser vorhanden ist, lädt er das und stellt es direkt im Browser dar. Wenn nicht vorhanden, öffnet er Download-Dialog</li>
+			</ul>
+		
+		<h3>Linkgestaltung</h3>
+			<p>Darstellung als Bild, wenn ich Schaltbutton z.B. als Brief darstellen möchte: <span class="html">&lta href=“mailto:ich@web.de“&gt &ltimg src=“bilder/Brief.gif“&gt</span>Kontakt<span class="html">&lt/a&gt</p>
+			<p>Links im Stylesheet ansprechen, um Aussehen zu verändern:</p>
+				<blockquote>
+					<span class="css">a{textdecoration:none;}</span> - d.h. keine Unterstreichung<br>
+				</blockquote>
+				
+			<p>Auszeichnungen:</p>
+				<ul>
+					<li><span class="mark">Link</span>: Frischer Link, blau, unterstrichen. <span class="css">a:link{    }</span></li>
+					<li><span class="mark">Visited</span>: Besuchter Link: lila, unterstrichen. <span class="css">a:visited{    }</span></li>
+					<li><span class="mark">Focus</span>: mit Tab markiert: gestrichelter Kasten drum. <span class="css">a:focus{    }</span></li>
+					<li><span class="mark">Hover</span>: mit Tastatur drüber: Hand. <span class="css">a:hover{    }</span></li>
+					<li><span class="mark">Active</span>: ang drauf geklickt, noch nicht aufgerufen: rot. <span class="css">a:active{    }</span></li>
+				</ul>
+			<p>Cursor-Symbol anzeigen/ändern, wenn man drübergeht (Liste nachschauen)</li>
+				<ul>
+					<li>Cursor:pointer (Handsymbol)</li>
+					<li>Cursor:help (?)</li>
+					<li>Cursor:crosshair (+)</li>
+				</ul>
+					<blockquote>
+						<span class="css">a{<br>
+						text-decoration:none;</span><br> - keine Unterstreichung
+						<span class="css">{cursor:default;
+						}</span>
+					</blockquote>	
+
+</div>
+
+<!--Section 7: Syntax-->		
+<div class="post">
+	
+	<h2 id="syntax">Syntax</h2>
+	
+		<h3>Block elements</h3>
+			<p>Most html tags are block elements</p>
+			<ul>
+				<li>Blockelemente: Blockelemente erzeugen Zeilenumbruch, z.B. <span>&lth1-h6&gt, &ltp&gt, &ltblockquote&gt, &ltdiv&gt</span></li>
+				<li>Eigenschaften will extend to whole container</li>
+				<li><span class="html">&ltli&gt</span>, <span class="html">&lth&gt</span>, <span class="html">&ltp&gt</span>: their characteristics will extend to whole line/section</li>
+			</ul>
+			
+		<h3>Inline elements</h3>
+			<p>Characteristics defined to marked elements</p>
+			<ul>
+				<li><span class="html">&lta&gt</span>, <span class="html">&ltem&gt</span>, <span class="html">&ltstrong&gt</span>, <span class="html">&lt/br&gt</span></li>
+				<li>block elements never inside inline elements</li>
+			</ul>
+		<h3>Regeln</h3>
+			<ul>
+				<li>Inline in Block</li>
+				<li>Inline in Inline</li>
+				<li>Block in übergeordnetem Block</li>
+				<li>Reihenfolge: <span class="html">&ltdiv&gt, &ltblockquote&gt, &figure&gt</span> übergeordnet, &ltp&gt untergeordnet.</li>
+				<li>D.h. figure, blockquote und div dürfen nicht in p stehen</li>
+			</ul>
+		
+		<p><a href="#">Zum Seitenanfang</a></p>
+		
+</div>
+
+<!-- Section 8: Iframes -->
+<div class="post">
+
+	<h2 id="iframes">Iframes</h2>
+		
+		<p><strong>What they do</strong>: add code / photos, videos, maps, from other websites<p>
+			<ul>
+				<li>On Google maps or youtube: share, embed, copy code</li>
+				<li>Iframe code contains info about: width, height, src attribute, border width, screenmode</li>
+				<li>If I want different data, I can change that, but keep side ratio</li>
+			</ul>
+
+		<p><a href="#">Zum Seitenanfang</a></p>
+		
+</div>
+
+<!--Practical stuff-->
+<div class="post">
+
+	<h2 id="practical">Practical things and tools</h2>
+	
+		<h3</strong></h3>
+			<ul>
+				<li>In Notepad schreiben, speichern mit Endung.html</li>
+				<li>launch in Chrome etc.</li>
+				<li>In Notepad unter "View" HTML oder CSS einstellen fürs Highlighten</li>
+			</ul>
+		<h3>Ordner/Speichern</strong></h3>
+			<ul>
+				<li>Name der Datei muss mit a-z anfangen, darf sonst nur 0-9, -, _ enthalten. Keine Sonderzeichen, Leerzeichen, Umlaute</li>
+				<li>Startseite immer als index.html abspeichern, wird vom Browser so aufgerufen</li>
+				<li>HTML-Dateien am besten im Roots-Ordner (und nicht in eigenem Unterordner), einfacher zu warten</li>
+			</ul>
+		<h3>Online stellen</strong></h3>
+			<ul>
+				<li>Webhostdienst raussuchen, z.B. auf webhostlist.de</li>
+				<li> Was ich brauche: Webspace (schauen wie groß meine Seite ist), Traffic (unlimited), Domainname min. 1, Serverstatistik, ftp-Zugang.</li>
+				<li>Was ich nicht brauche: Datenbanken (evtl. bei WordPress: SQL (?)), php</li>
+				<li>Servertyp: Linux ist sicherer als Windows</li>
+				<li>Dienst raussuchen, anmelden</li>
+				<li>Übermittelt mir Servername, ftp-Nutzername, ftp-Passwort (oder Webftp: direkt über Kundenoberfläche hochladen, ohne eigenes Programm)</li>
+			</ul>
+		<h3>Hochladen auf den Server</h3>
+			<ul>
+				<li>Z.B. mit Filezilla</li>
+				<li>Dort Servername angeben, Benutzername, Passwort. Default-Port ist 21</li>
+				<li>Dann Dokumente, Ordner hochladen</li>
+			</ul>
+
+		<h3>Finishing project</h3>
+			<ul>
+				<li>Shipping a project: not wait until product is perfect, define it as "done" even when it is still in progress.</li>
+				<li>Break shipment into manageable steps. Define priorities and minimum viable product (mobile version?), and then continue shipping in small steps/increments. Set deadlines for each of them.</li>
+       			</ul>
+       			
+       		<h3>Quality Assurance (QA)</h3>
+       			<ul>
+       				<li>Big firms use testing software. Still important to make spreadsheet to check certain things</li
+			         <li>Check content (spell check, Vollständigkeit)</li>
+			         <li>Do links and images work, is everything readable?</li>
+			         <li>Cross-browser QA: web fonts, header + main content area + footer showing, all images displaying?</li>
+		       </ul>
+       
+	       <h3>For mobile devices</h3>
+		       <ul>
+		       		<li>Chrome dev tools</li>
+			        <li>Mobile-ready: <a href="https://search.google.com/test/mobile-friendly" target="_blank">Testing website</a> if website is mobile friendly (only working if site is online)</li>
+			         <li>On multiple screen sizes at once: <a href="http://mattkersley.com/responsive/" target="_blank">Responsive-design-testing-master</a> - test live sites on that website, or download code from GitHub and test local site. In folder, open index.html and type in my local site</li>
+		       </ul>
+  </div>
+		<p><a href="#">Zum Seitenanfang</a></p>
+
+	
+</div>
+
+</main>
+
+<!--Resourcen-->
+<footer>
+	
+	<h3 id="resources">Useful links</h3>
+	
+		<p><a href="https://wiki.selfhtml.org/wiki/HTML/Tutorials/HTML-Einstieg" target="_blank">Self-HTML</a>, eine deutsche Seite, zum Verstehen und Nachschlagen</p>
+		<p><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Mozillas Developer Network</a>, one of the most popular</p>
+		<p><a href="https://validator.w3.org/" target="_blank">W3 Validator</a>, validator for your code</p>
+
+	<p><a href="#">Zum Seitenanfang</a></p>
+	
+</footer
+
+</body>
+</html>
