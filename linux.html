@@ -106,7 +106,63 @@
             <li><span class="linux">whois skillcrush.com</span>: who owns website</li>
           </ul>
       </div>
-    
+      
+    </div>
+
+  <h2>Git commands</h2>
+    <div class="flex-container">
+
+      <div class="post" class="flex-item">
+            
+        <h3>Configure Git and create repositories</h3>
+          <ul>
+            <li><span class="linux">git config --global user.name "My name"</span>: Set username</li>
+            <li><span class="linux">git config --global user.email "email"</span>: Set email</li>
+            <li><span class="linux">git config --global user.name (or email)</span>: Check name</li>
+            <li>Go to folder and turn folder into git repository. Create 1 repository for each project. Repositories in Git contain my files and folders for projects</li>
+            <li><span class="linux">git init</span>: create empty repository</li>
+            <li><span class="linux">git status</span>: tells me the status of this folder in git (including untracked files), see all changes I have made - files that have been added, new files or directories etc. (good to run before adding files and committing changes)</li>
+          </ul>
+                   
+      </div>
+      
+      <div class="post" class="flex-item">
+      
+        <h3>Add and commit files</h3>
+          <ul>
+            <li><span class="linux">git add index.html</span>: tells Git which files to add to these repositories. Add all untracked files that I want in there. Add files individually (usually best)</li>
+            <li><span class="linux">git add .</span>: add all files in current folder</li>
+            <li><span class="linux">git add -A</span>: add all files in repository</li>
+            <li><span class="linux">git commit -m</span>: commit files, like save command, and I can also add comments: <li><span class="linux">git commit -m "my fist commit</span></li>
+            <li><span class="linux">git log</span>: tells me history of commits and comments (and who committed at what time)</li>
+            <li>After that, edit code files until I am at a good stopping point, commit files using git add command (for all files) with comment what I changed</li>
+          </ul>
+
+        <h3>Create git branches</h3>
+          <ul>
+            <li>Git views my code like a tree. If I work on some of the files, I can create branches (copy of the codebase) and work on code without affecting trunk code base</li>
+            <li><span class="linux">git checkout -b branchname</span>: create new local branch</li>
+            <li><span class="linux">git checkout branchname</span>: checks out existing bands</li>
+            <li><span class="linux">git branch -a</span>: shows all existing branches and highlights current branch ("remote" refers to external repository)</li>
+            <li><span class="linux">git branch -d branchname</span>: deletes specified branch</li>
+            <li><span class="linux">git merge branchname</span>: merges specified branch into current branch</li>
+          </ul>
+          
+      </div>
+      
+      <div class="post" class="flex-item">
+       
+       <h3>Some git commands</h3>
+         <ul>
+           <li><span class="linux">git diff path/.../index.html</span>: compares local file with version of my most recent commit</li>
+           <li><span class="linux">git pull</span>: commits down from remote repository to local repository</li>
+           <li><span class="linux">git push</span>: pushes local commit to remote</li>
+           <li><span class="linux">git rm</span>: removes file or directory from repository</li>
+           <li><span class="linux">git help</span>: list of common commands</li>
+         </ul>
+     
+     </div>
+
     </div>
 
 <!-- Tastenkombinationen in Linux -->
