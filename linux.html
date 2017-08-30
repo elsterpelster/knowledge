@@ -157,17 +157,22 @@
             <li>Idea: We have codebase (trunk - master branch) with thousands of files and 10 developers working on it</li>
             <li>If I make changes to a codefile, do not make this on trunk, but create branch (parallel version of code, like a copy) and edit this branch. If these changes make sense, merge branch with trunk, so integrate branch back into master branch.</li>
           </ul>
-          
-          <p>How to create a branch</p>
+        
+        <h3>How to create a branch</h3>
           <ul>
             <li>Inside my folder "project", I have folder with codefiles.</li>
             <li><span class="linux">git branch</span>: shows me existing branches and tells me branch that I'm currently on, usually master branch</li>
             <li><span class="linux">git checkout -b mynewbranch</span>: create new branch called "mynewbranch" and switches to it. New branch is exact copy of master branch. Changes I make and commit to branch will not show in codebase (so codefiles I find in folder), but only in branches. Only if I merge branch, they will show</li>
           </ul>
           
-          <p>Make changes to branch and then merge</p>
+        <h3>Make changes to branch</h3>
           <ul>
             <li><span class="linux">git status</span>: If I have created branch "mynewbranch", check if I am on this branch. Make changes to any file now and save</li>
+            <li>If I want to test out these changes in browser, make sure I am on this branch and then open it in browser. If I want to test it out against master trunk, switch to master and open it in browser</li>
+          </ul>
+          
+        <h3>Merge changes</h3>
+          <ul>
             <li><span class="linux">git checkout master</span>: checkout master branch and switch to it. To merge, I need to be on branch that I want to merge into!</li>
             <li><span class="linux">git merge mynewbranch</span>: merge changes of new branch into branch I am currently on (so master branch)</li>
           </ul>
