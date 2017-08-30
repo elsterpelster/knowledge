@@ -17,11 +17,11 @@ html, body {
 /* header */
 
 header {
+  display: flex;
   align-items: center;
   justify-content: center;
   background: #219ac2;
   color: #fff;
-  display: flex;
   width: 96%;
   }
 
