@@ -160,14 +160,15 @@
           
           <p>How to create a branch</p>
           <ul>
-            <li>Inside my folder "project", I have folder with codefiles. <span class="linux">git branch</span>: shows me existing branches and tells me branch that I'm currently on, usually master branch</li>
-            <li>To not edit master branch, create branch. <span class="linux"> git checkout -b mynewbranch</span> - creates new branch called "mynewbranch" and switches to it. New branch is exact copy of master branch.</li>
-            <li>Changes I make and commit to branch will not show in codebase (so codefiles I find in folder), but only in branches. Only if I merge branch, they will show</li>
+            <li>Inside my folder "project", I have folder with codefiles.</li>
+            <li><span class="linux">git branch</span>: shows me existing branches and tells me branch that I'm currently on, usually master branch</li>
+            <li><span class="linux">git checkout -b mynewbranch</span>: create new branch called "mynewbranch" and switches to it. New branch is exact copy of master branch. Changes I make and commit to branch will not show in codebase (so codefiles I find in folder), but only in branches. Only if I merge branch, they will show</li>
           </ul>
           
-          <p>Merge branches</p>
+          <p>Make changes to branch and then merge</p>
           <ul>
-            <li>If I want to add edits of one branch to master branch, first checkout master branch: <span class="linux">git checkout master</span> or <span class="linux">git branch</span></li>
+            <li><span class="linux">git status</span>: If I have created branch "mynewbranch", check if I am on this branch. Make changes to any file now and save</li>
+            <li><span class="linux">git checkout master</span>: checkout master branch and switch to it. To merge, I need to be on branch that I want to merge into!</li>
             <li><span class="linux">git merge mynewbranch</span>: merge changes of new branch into branch I am currently on (so master branch)</li>
           </ul>
       </div>
