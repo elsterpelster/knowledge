@@ -14,7 +14,7 @@
 <header>
 
 <!-- header farblich absetzen -->
-  <h1>SHORTCUTS FOR LINUX, GIT AND THE COMMAND LINE</h1>
+  <h1>shortcuts for linux, git, and the command line</h1>
 	
 <!-- main site navigation goes on top -->
   <nav>
@@ -64,6 +64,7 @@
             <li><span class="linux">cd Doc + tabkey</span>: autofill</li>
             <li><span class="linux">cd -</span>: go back to previous directory</li>
             <li><span class="linux">ls</span>: list services in this directory</li>
+            <li><span class="linux">ls -a</span>: list also hidden services</li>
             <li><span class="linux">ls -d</span>: list with details</li>
           </ul>
       </div>
@@ -108,6 +109,31 @@
       </div>
       
     </div>
+
+<!-- Tastenkombinationen in Linux -->
+  <h2>Shortcuts in Linux and Chromium</h2>
+    
+    <div class="flex-container">
+    
+      <div class="post" class="flex-item">
+        <h3>Im Browser</h3>
+          <ul>
+            <li><span class="linux">Alt + left-arrow</span>: Zurück</li>
+          </ul>
+      </div>
+      
+      <div class="post" class="flex-item">
+        <h3>In Ubuntu</h3>
+          <ul>
+            <li><span class="linux">Ctrl + win + d</span>: show desktop</li>
+            <li><span class="linux">Ctrl + w</span>: launch terminal</li>
+            <li><span class="linux">Ctrl + g</span>: launch Chromium</li>
+          </ul>
+      </div>
+
+    </div>        
+
+<!-- Git -->
 
   <h2>Git commands</h2>
     <div class="flex-container">
@@ -179,7 +205,7 @@
       </div>
       
       <div class="post" class="flex-item">      
-        <h1>Merge conflicts</h1>
+        <h3>Merge conflicts</h3>
           <ul>
             <li>If several people edit same line of code on several branches and then try to merge, that's a merge conflict, because which changes are authoritative?</li>
             <li>If I want to merge and git tells me that there is a merge conflict in certain file, I need to open file. Git adds code where merge conflict is (everything in top section is from master branch. Everything from lower section is from experiment branch). I need to decide then and delete code added by git</li>
@@ -199,28 +225,81 @@
     
     </div>
     
-<!-- Tastenkombinationen in Linux -->
-  <h2>Shortcuts in Linux and Chromium</h2>
-    
+<!-- GitHub -->
+
+  <h2>GitHub</h2>
     <div class="flex-container">
-    
+
       <div class="post" class="flex-item">
-        <h3>Im Browser</h3>
+        <h3>Set up: connect computer to GitHub</h3>
+          <p>If I want to access repository, GitHub needs to verify that I have access to it</p>
+          <p>Access repository with special link, which defines how data is transferred over the internet. Process is called transfer protocol. Identity is verified depending on type of transfer protocol I use</p>
+
           <ul>
-            <li><span class="linux">Alt + left-arrow</span>: Zurück</li>
+            <li><span class="linux">git clone https://github.com/skillcrush/wordpress.git</span> would be access via https protocol. Then I need to enter my username and password every time I push or pull code</li>
+            <li><span class="linux">git clone git@github.com/skillcrush/wordpress.git</span> is access via SSH protocol: then I do not need to enter credentials</li>
+          </ul>
+          
+        <h3>Verification with SSH keys.</h3>
+          <ul>
+            <li>Every time I push and pull, GitHub compares private or public keys</li>
+            <li>Keys in general stored are in special folder called .ssh in home directory. If I don't have one, create .ssh folder in home directory</li>
+            <li><span class="linux">ls -la</span>: check if .ssh repository has a public key: if there is some id_dsa.pub or id_rsa.pub, I have a public key</li>
+          </ul>
+          
+          <p>If I do not have a key, create one</p>
+          <ul>
+            <li><span class="linux">ssh-keygen -t rsa -C "myemail@email.com"</span><li>
+            <li>Press enter, generate password (24K)</li>
+            <li><span class="linux">ssh-add ~/.ssh/id_rsa</span> - add key to ssh agent, then I won't have to enter password every time my key is accessed</li>
+          </ul>
+          
+          <p>Add public key to GitHub account</p>
+          <ul>
+            <li><span class="linux">pbcopy < ~/.ssh/id_rsa.pub</span>: copy public key</li>
+            <li>Go to GitHub account, Settings, click on "SSH and GPG keys" and click "New SSH key". Give title "elsterpelsters thinkpad" and paste contents of public SSH key</li>
+            <li>Click "Add SSH key" and insert public key (that I find in .ssh folder)</li>
+            <li><span class="linux">cd ~/.ssh</span> and run <span class="linux">ls -la</span>: check SSH keys in this folder. It should show either id_dsa.pub or id_rsa.pub</li>
+            <li>Now computer should be able to connect to GitHub</li>
+            <li>GitHub has command with which I can verify that I added keys correctly: in terminal, type <span class="linux">ssh -T git@github.com</span>. Type yes and hit enter (will say that it does not provide shell access, which is fine)</li>
           </ul>
       </div>
       
-      <div class="post" class="flex-item">
-        <h3>In Ubuntu</h3>
+      <div class="post" class="flex-item">          
+        <h3>How GitHub is organized</h3>
+          <p>Every repository has its own page, where I see all files and folders that belong to project</p>
           <ul>
-            <li><span class="linux">Ctrl + win + d</span>: show desktop</li>
-            <li><span class="linux">Ctrl + w</span>: launch terminal</li>
-            <li><span class="linux">Ctrl + g</span>: launch Chromium</li>
+            <li>I always see most recent version, but can also see history by clicking on "history" on top right.</li>
+            <li>Blue icon on the right hand of file shows details. Lines highlighted in red where removed, lines highlighted in green where added</li>
+            <li>Settings: add collaborators to repository, change visibility</li>
+            <li>Search box: search codefiles</li>
           </ul>
+          
+          <h3>GitHub repositories</h3>
+          
+            <p>On GitHub, repositories can be either private or public.</p>
+            <ul>
+              <li>Private only available to people I have granted access to via this repository's setting page.</li>
+              <li>Public repositories are available to everyone and can be searched and edited on GitHub by everyone html tags</li>
+            </ul>
+              
+            <p>Create new repository</p>
+            <ul>
+              <li>Next to my account on top, click + and create new repository. Name should be lowercase and descriptive and set to public or private (public are free). No readme.</li>
+              <li>Connect to local respository: switch to SSH protocol</li>
+              <li>Add GitHub repository as remote origin for Git repository: check if I already have remote origin: cd to my project and type <span class="linux">git remote -v</span></li>
+              <li>If nothing shows up, type <span class="linux">git remote add origin git@github.com elsterpelster/knowledge.git</span>. Check <span class="linux">git remote -v</span> again, should show up</li>
+            </ul>
+            
+            <p>Push up code</p>
+            <ul>
+              <li>Push up code for first time and set myself as master for this code (so I will be informed about any changes on that code): <span class="linux">git push -u origin master</span>. Now all my code should be added</li>
+              <li>Push changes: If I now make any changes to my code and add and commit them, I have to push them to remote repository</li>
+              <li>First, pull code for any changes that may have been made (get habit of doing that)</li>
+            </ul>
       </div>
-
-    </div>        
+      
+    </div>
 
 <!-- Setup -->
 	<div class="post">
